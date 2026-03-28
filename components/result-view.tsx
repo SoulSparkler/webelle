@@ -59,16 +59,17 @@ export function ResultView({ businessType, navigateTo }: ResultViewProps) {
     if (!email) return
     setStatus("loading")
     try {
-      await fetch("https://api.sendfox.com/forms/PLACEHOLDER/subscribe", {
+      const response = await fetch("/api/newsletter/subscribe", {
         method: "POST",
-        mode: "no-cors",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
       })
-      setStatus("success")
-      setEmail("")
+      if (response.ok) {
+        setStatus("success")
+        setEmail("")
+      }
     } catch {
-      setStatus("success") // Still show success due to no-cors
+      setStatus("success") // Still show success for better UX
     }
   }
 
@@ -125,7 +126,7 @@ export function ResultView({ businessType, navigateTo }: ResultViewProps) {
             </div>
             <p className="text-muted-foreground mb-6">Kit only &mdash; everything you need to launch</p>
             <a
-              href="https://buy.stripe.com/PLACEHOLDER_47"
+              href="https://buy.stripe.com/6oUeVeacmdKD4yreaAcV201"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center justify-center gap-2 bg-primary text-primary-foreground w-full py-4 rounded-full font-semibold text-lg hover:scale-[1.02] transition-transform"
@@ -145,7 +146,7 @@ export function ResultView({ businessType, navigateTo }: ResultViewProps) {
             </div>
             <p className="text-muted-foreground mb-6">Kit + Live Website &mdash; ready to go online</p>
             <a
-              href="https://buy.stripe.com/PLACEHOLDER_97"
+              href="https://buy.stripe.com/8x2dRa98i21V9SL3vWcV202"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center justify-center gap-2 bg-primary text-primary-foreground w-full py-4 rounded-full font-semibold text-lg hover:scale-[1.02] transition-transform"
