@@ -27,6 +27,7 @@
   
   /* WebElle custom colors */
   --pink: #FFB6D9;
+  --pink-hot: #FF69B4;
   --lavender: #C8B6FF;
   --mint: #4ADE80;
   --peach: #FFB088;
@@ -65,6 +66,7 @@
   
   /* WebElle colors */
   --color-pink: var(--pink);
+  --color-pink-hot: var(--pink-hot);
   --color-lavender: var(--lavender);
   --color-mint: var(--mint);
   --color-peach: var(--peach);
@@ -125,4 +127,12 @@
 
 .animate-fade-in {
   animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Grid pattern overlay */
+.grid-pattern {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
