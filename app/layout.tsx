@@ -1,12 +1,13 @@
 import type { Metadata } from 'next'
-import { Anton, DM_Sans } from 'next/font/google'
+import { DM_Serif_Display, DM_Sans } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const anton = Anton({ 
+const dmSerifDisplay = DM_Serif_Display({ 
   weight: '400',
+  style: ['normal', 'italic'],
   subsets: ["latin"],
-  variable: '--font-anton'
+  variable: '--font-serif-display'
 })
 
 const dmSans = DM_Sans({ 
@@ -44,7 +45,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${anton.variable} ${dmSans.variable} font-sans antialiased`}>
+      <body className={`${dmSerifDisplay.variable} ${dmSans.variable} font-sans antialiased`}>
         {children}
         <Analytics />
       </body>

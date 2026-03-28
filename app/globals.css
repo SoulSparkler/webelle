@@ -26,7 +26,8 @@
   --radius: 0.625rem;
   
   /* WebElle custom colors */
-  --pink: #FFB6D9;
+  --pink: #FF6EB4;
+  --pink-hot: #FF69B4;
   --lavender: #C8B6FF;
   --mint: #4ADE80;
   --peach: #FFB088;
@@ -38,7 +39,8 @@
 
 @theme inline {
   --font-sans: var(--font-dm-sans), system-ui, sans-serif;
-  --font-display: var(--font-anton), system-ui, sans-serif;
+  --font-display: var(--font-serif-display), Georgia, serif;
+  --color-pink-hot: var(--pink-hot);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -125,4 +127,12 @@
 
 .animate-fade-in {
   animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Grid pattern overlay */
+.grid-pattern {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
