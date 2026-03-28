@@ -39,7 +39,7 @@ export function NewsletterSection() {
           Join The Starter &mdash; fresh business ideas, success stories, and launch tips. Monthly. Free.
         </p>
 
-        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
+        <form onSubmit={handleSubmit} suppressHydrationWarning className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
           <input
             type="email"
             value={email}

@@ -32,8 +32,8 @@ const steps = [
 export function HowItWorksSection({ navigateTo }: HowItWorksSectionProps) {
   return (
     <section className="relative overflow-hidden">
-      {/* Hot pink background with grid pattern */}
-      <div className="absolute inset-0 bg-[#FF69B4]" />
+      {/* Pastel purple background with grid pattern */}
+      <div className="absolute inset-0 bg-[rgb(199,147,254)]" />
       <div className="absolute inset-0 grid-pattern" />
       
       <div className="relative z-10 py-20 px-6 sm:px-8 lg:px-12">
@@ -92,10 +92,10 @@ export function HowItWorksSection({ navigateTo }: HowItWorksSectionProps) {
             </p>
             <button
               onClick={() => navigateTo("quiz")}
-              className="group inline-flex items-center gap-3 bg-white text-[#FF69B4] px-8 py-4 rounded-full font-bold text-lg hover:bg-black hover:text-white transition-all duration-300"
+              className="group inline-flex items-center gap-3 bg-white text-[rgb(199,147,254)] px-8 py-4 rounded-full font-bold text-lg hover:bg-black hover:text-white transition-all duration-300"
             >
               START THE QUIZ
-              <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#FF69B4] text-white group-hover:bg-white group-hover:text-black transition-all">
+              <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[rgb(199,147,254)] text-white group-hover:bg-white group-hover:text-black transition-all">
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
