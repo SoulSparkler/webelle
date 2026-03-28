@@ -18,16 +18,20 @@ export function NewsletterView({ navigateTo }: NewsletterViewProps) {
     setStatus("loading")
     
     try {
-      await fetch("https://api.sendfox.com/forms/PLACEHOLDER/subscribe", {
+      const response = await fetch("/api/newsletter/subscribe", {
         method: "POST",
-        mode: "no-cors",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ email }),
       })
-      setStatus("success")
-      setEmail("")
+
+      if (response.ok) {
+        setStatus("success")
+        setEmail("")
+      } else {
+        setStatus("error")
+      }
     } catch {
       setStatus("error")
     }
