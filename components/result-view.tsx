@@ -9,6 +9,30 @@ interface ResultViewProps {
   navigateTo: (view: ViewType) => void
 }
 
+// Kit-specific Stripe payment links
+const paymentLinks: Record<BusinessType, { starter: string; premium: string }> = {
+  organizer: {
+    // Virtual Assistant (VA)
+    starter: "https://buy.stripe.com/3cI3cwbgq35Zd4X5E4cV204",
+    premium: "https://buy.stripe.com/00w4gA70a4a3gh99UkcV203",
+  },
+  curator: {
+    // Resale Arbitrage / Vintage Seller (RA)
+    starter: "https://buy.stripe.com/eVq6oI98idKDd4X7MccV207",
+    premium: "https://buy.stripe.com/5kQeVebgq21V2qjfeEcV208",
+  },
+  active: {
+    // Dog Walker (DW)
+    starter: "https://buy.stripe.com/cNi5kE2JU4a35Cv5E4cV206",
+    premium: "https://buy.stripe.com/4gMcN6gAK8qj9SL5E4cV205",
+  },
+  connector: {
+    // Virtual Stylist (VS)
+    starter: "https://buy.stripe.com/8x25kEckueOH9SLaYocV20a",
+    premium: "https://buy.stripe.com/bJeaEYgAK9un0ibd6wcV209",
+  },
+}
+
 const kitIncludes: Record<BusinessType, string[]> = {
   organizer: [
     "Zero-to-first-client launch guide",
@@ -53,6 +77,7 @@ export function ResultView({ businessType, navigateTo }: ResultViewProps) {
   const [status, setStatus] = useState<"idle" | "loading" | "success">("idle")
   const kit = kitsData[businessType]
   const includes = kitIncludes[businessType]
+  const links = paymentLinks[businessType]
 
   const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -126,7 +151,7 @@ export function ResultView({ businessType, navigateTo }: ResultViewProps) {
             </div>
             <p className="text-muted-foreground mb-6">Kit only &mdash; everything you need to launch</p>
             <a
-              href="https://buy.stripe.com/6oUeVeacmdKD4yreaAcV201"
+              href={links.starter}
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center justify-center gap-2 bg-primary text-primary-foreground w-full py-4 rounded-full font-semibold text-lg hover:scale-[1.02] transition-transform"
@@ -146,7 +171,7 @@ export function ResultView({ businessType, navigateTo }: ResultViewProps) {
             </div>
             <p className="text-muted-foreground mb-6">Kit + Live Website &mdash; ready to go online</p>
             <a
-              href="https://buy.stripe.com/8x2dRa98i21V9SL3vWcV202"
+              href={links.premium}
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center justify-center gap-2 bg-primary text-primary-foreground w-full py-4 rounded-full font-semibold text-lg hover:scale-[1.02] transition-transform"
