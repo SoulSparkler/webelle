@@ -17,9 +17,9 @@ const paymentLinks: Record<BusinessType, { starter: string; premium: string }> =
     premium: "https://buy.stripe.com/00w4gA70a4a3gh99UkcV203",
   },
   curator: {
-    // Resale Arbitrage / Vintage Seller (RA)
-    starter: "https://buy.stripe.com/eVq6oI98idKDd4X7MccV207",
-    premium: "https://buy.stripe.com/5kQeVebgq21V2qjfeEcV208",
+    // Vintage Seller (VS)
+    starter: "https://buy.stripe.com/8x25kEckueOH9SLaYocV20a",
+    premium: "https://buy.stripe.com/bJeaEYgAK9un0ibd6wcV209",
   },
   active: {
     // Dog Walker (DW)
@@ -27,9 +27,9 @@ const paymentLinks: Record<BusinessType, { starter: string; premium: string }> =
     premium: "https://buy.stripe.com/4gMcN6gAK8qj9SL5E4cV205",
   },
   connector: {
-    // Virtual Stylist (VS)
-    starter: "https://buy.stripe.com/8x25kEckueOH9SLaYocV20a",
-    premium: "https://buy.stripe.com/bJeaEYgAK9un0ibd6wcV209",
+    // Real Estate (RA)
+    starter: "https://buy.stripe.com/eVq6oI98idKDd4X7MccV207",
+    premium: "https://buy.stripe.com/5kQeVebgq21V2qjfeEcV208",
   },
 }
 
