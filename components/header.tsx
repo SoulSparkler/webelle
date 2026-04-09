@@ -51,6 +51,16 @@ export function Header({ currentView, navigateTo }: HeaderProps) {
           >
             The Starter
           </button>
+          <button
+            onClick={() => window.location.href = "/blog"}
+            className={`px-5 py-2 rounded-full border text-sm font-medium transition-all hover:bg-primary hover:text-primary-foreground ${
+              currentView === "blog" 
+                ? "bg-primary text-primary-foreground" 
+                : "border-primary/30 hover:border-primary"
+            }`}
+          >
+            Blog
+          </button>
         </div>
 
         {/* Mobile menu button */}
@@ -96,6 +106,15 @@ export function Header({ currentView, navigateTo }: HeaderProps) {
             className="px-5 py-3 rounded-full border border-primary/30 text-sm font-medium text-center hover:bg-primary hover:text-primary-foreground transition-all"
           >
             The Starter
+          </button>
+          <button
+            onClick={() => {
+              window.location.href = "/blog"
+              document.getElementById("mobile-menu")?.classList.add("hidden")
+            }}
+            className="px-5 py-3 rounded-full border border-primary/30 text-sm font-medium text-center hover:bg-primary hover:text-primary-foreground transition-all"
+          >
+            Blog
           </button>
         </div>
       </div>

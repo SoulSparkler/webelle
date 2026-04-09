@@ -14,6 +14,7 @@ import { QuizView } from "@/components/quiz-view"
 import { ResultView } from "@/components/result-view"
 import { KitBrowserView } from "@/components/kit-browser-view"
 import { NewsletterView } from "@/components/newsletter-view"
+import { BlogSection } from "@/components/blog-section"
 
 export type ViewType = "home" | "quiz" | "result" | "kits" | "newsletter"
 export type BusinessType = "curator" | "active" | "organizer" | "connector"
@@ -64,6 +65,7 @@ export default function WebEllePage() {
           <WhatsInKitSection />
           <HowItWorksSection navigateTo={navigateTo} />
           <BrowseKitsSection onViewKit={handleViewKit} />
+          <BlogSection navigateTo={navigateTo} />
           <CTASection navigateTo={navigateTo} />
           <NewsletterSection />
           <AboutSection />
