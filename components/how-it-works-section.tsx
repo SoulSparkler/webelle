@@ -1,6 +1,6 @@
 "use client"
 
-import type { ViewType } from "@/app/page"
+import type { ViewType } from "@/lib/site"
 
 interface HowItWorksSectionProps {
   navigateTo: (view: ViewType) => void

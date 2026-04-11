@@ -1,7 +1,7 @@
 "use client"
 
-import type { BusinessType, ViewType } from "@/app/page"
-import { kitsData } from "./browse-kits-section"
+import type { BusinessType, ViewType } from "@/lib/site"
+import { kitCatalog, kitOrder } from "@/lib/kits"
 
 interface KitBrowserViewProps {
   onViewKit: (kitType: BusinessType) => void
@@ -9,12 +9,9 @@ interface KitBrowserViewProps {
 }
 
 export function KitBrowserView({ onViewKit, navigateTo }: KitBrowserViewProps) {
-  const kitTypes: BusinessType[] = ["organizer", "curator", "active", "connector"]
-
   return (
     <div className="min-h-screen pt-24 pb-16 px-4 sm:px-6 lg:px-8 animate-fade-in">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-6">
             <span className="w-3 h-3 rounded-full bg-mint" />
@@ -30,42 +27,32 @@ export function KitBrowserView({ onViewKit, navigateTo }: KitBrowserViewProps) {
           </p>
         </div>
 
-        {/* Kits grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          {kitTypes.map((type) => {
-            const kit = kitsData[type]
+          {kitOrder.map((type) => {
+            const kit = kitCatalog[type]
+
             return (
               <div
                 key={type}
                 className="bg-card border border-border rounded-2xl p-8 hover:translate-y-[-4px] hover:shadow-xl transition-all duration-300"
               >
-                {/* Badge */}
                 <span className="inline-block bg-peach text-foreground px-3 py-1 rounded-full text-xs font-bold uppercase mb-4">
                   {kit.badge}
                 </span>
 
-                {/* Kit name */}
                 <h2 className="font-[var(--font-anton)] text-3xl uppercase tracking-tight mb-3">
                   {kit.name}
                 </h2>
 
-                {/* Tagline */}
-                <p className="text-pink font-medium mb-4">
-                  {kit.tagline}
-                </p>
+                <p className="text-pink font-medium mb-4">{kit.tagline}</p>
 
-                {/* Description */}
-                <p className="text-muted-foreground mb-6">
-                  {kit.description}
-                </p>
+                <p className="text-muted-foreground mb-6">{kit.description}</p>
 
-                {/* Price */}
                 <div className="mb-6">
-                  <span className="text-4xl font-bold">€47</span>
-                  <span className="text-muted-foreground ml-2">or €97 with website</span>
+                  <span className="text-4xl font-bold">{kit.starterPriceLabel}</span>
+                  <span className="text-muted-foreground ml-2">or {kit.premiumPriceLabel} with website</span>
                 </div>
 
-                {/* CTA */}
                 <button
                   onClick={() => onViewKit(type)}
                   className="group flex items-center justify-center gap-2 bg-primary text-primary-foreground w-full py-4 rounded-full font-semibold text-lg hover:scale-[1.02] transition-transform"
@@ -78,7 +65,6 @@ export function KitBrowserView({ onViewKit, navigateTo }: KitBrowserViewProps) {
           })}
         </div>
 
-        {/* Quiz CTA */}
         <div className="bg-lavender-light rounded-2xl p-8 sm:p-12 text-center">
           <h2 className="font-[var(--font-anton)] text-3xl sm:text-4xl uppercase tracking-tight mb-4">
             {"Don't see your dream business?"}
@@ -95,7 +81,6 @@ export function KitBrowserView({ onViewKit, navigateTo }: KitBrowserViewProps) {
           </button>
         </div>
 
-        {/* Back to home */}
         <div className="text-center mt-12">
           <button
             onClick={() => navigateTo("home")}

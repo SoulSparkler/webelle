@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import type { ViewType } from "@/app/page"
+import type { ViewType } from "@/lib/site"
 
 interface NewsletterViewProps {
   navigateTo: (view: ViewType) => void
@@ -10,12 +10,14 @@ interface NewsletterViewProps {
 export function NewsletterView({ navigateTo }: NewsletterViewProps) {
   const [email, setEmail] = useState("")
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
+  const [errorMessage, setErrorMessage] = useState("Something went wrong. Please try again.")
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!email) return
 
     setStatus("loading")
+    setErrorMessage("Something went wrong. Please try again.")
     
     try {
       const response = await fetch("/api/newsletter/subscribe", {
@@ -23,13 +25,15 @@ export function NewsletterView({ navigateTo }: NewsletterViewProps) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, source: "newsletter" }),
       })
 
       if (response.ok) {
         setStatus("success")
         setEmail("")
       } else {
+        const data = await response.json().catch(() => null)
+        setErrorMessage(data?.error ?? "Something went wrong. Please try again.")
         setStatus("error")
       }
     } catch {
@@ -79,7 +83,7 @@ export function NewsletterView({ navigateTo }: NewsletterViewProps) {
           <p className="text-foreground font-medium mb-6">Welcome to The Starter! Check your inbox.</p>
         )}
         {status === "error" && (
-          <p className="text-red-600 font-medium mb-6">Something went wrong. Please try again.</p>
+          <p className="text-red-600 font-medium mb-6">{errorMessage}</p>
         )}
 
         <p className="text-sm text-muted-foreground mb-12">

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import type { QuizAnswers, BusinessType } from "@/app/page"
+import type { QuizAnswers } from "@/lib/site"
 
 interface QuizViewProps {
   onComplete: (answers: QuizAnswers) => void

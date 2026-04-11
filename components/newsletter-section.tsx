@@ -5,12 +5,14 @@ import { useState } from "react"
 export function NewsletterSection() {
   const [email, setEmail] = useState("")
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
+  const [errorMessage, setErrorMessage] = useState("Something went wrong. Please try again.")
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!email) return
 
     setStatus("loading")
+    setErrorMessage("Something went wrong. Please try again.")
     
     try {
       const response = await fetch("/api/newsletter/subscribe", {
@@ -18,13 +20,15 @@ export function NewsletterSection() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, source: "newsletter" }),
       })
 
       if (response.ok) {
         setStatus("success")
         setEmail("")
       } else {
+        const data = await response.json().catch(() => null)
+        setErrorMessage(data?.error ?? "Something went wrong. Please try again.")
         setStatus("error")
       }
     } catch {
@@ -65,7 +69,7 @@ export function NewsletterSection() {
           <p className="mt-4 text-foreground font-medium">Welcome to The Starter!</p>
         )}
         {status === "error" && (
-          <p className="mt-4 text-red-600 font-medium">Something went wrong. Please try again.</p>
+          <p className="mt-4 text-red-600 font-medium">{errorMessage}</p>
         )}
 
         <p className="mt-6 text-sm text-foreground/60">

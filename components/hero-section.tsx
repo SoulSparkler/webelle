@@ -1,6 +1,6 @@
 "use client"
 
-import type { ViewType } from "@/app/page"
+import type { ViewType } from "@/lib/site"
 
 interface HeroSectionProps {
   navigateTo: (view: ViewType) => void
