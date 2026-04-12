@@ -32,7 +32,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "You can launch a virtual assistant business for less than many people think. This guide breaks down the real costs, what to skip, and how to land your first client fast.",
     category: "Virtual Assistant",
-    publishedAt: "April 11, 2026",
+    publishedAt: "April 8, 2026",
     readingTime: "9 min read",
     featured: true,
     businessType: "organizer",
@@ -151,7 +151,7 @@ If you want the shortcut, [view the Virtual Assistant Kit](${getResultPath("orga
     excerpt:
       "From thrift stores to online listings, this guide covers how to launch a vintage reselling business, avoid beginner mistakes, and make your first profitable flips.",
     category: "Vintage Reselling",
-    publishedAt: "April 11, 2026",
+    publishedAt: "April 10, 2026",
     readingTime: "10 min read",
     featured: true,
     businessType: "curator",
@@ -282,7 +282,7 @@ If you want the fastest path, [view the Vintage Seller Kit](${getResultPath("cur
     excerpt:
       "This guide covers equipment, pricing, client acquisition, and how to build a dog walking business that can start part-time and grow steadily.",
     category: "Dog Walking",
-    publishedAt: "April 11, 2026",
+    publishedAt: "April 13, 2026",
     readingTime: "8 min read",
     featured: true,
     businessType: "active",
@@ -403,7 +403,7 @@ If you want the shortcut, [view the Dog Walker Kit](${getResultPath("active")}) 
     excerpt:
       "Real estate can be flexible, profitable, and realistic for career changers. Here is how licensing, costs, client acquisition, and first-year expectations actually look.",
     category: "Real Estate",
-    publishedAt: "April 11, 2026",
+    publishedAt: "April 15, 2026",
     readingTime: "11 min read",
     businessType: "connector",
     primaryCta: {
@@ -525,7 +525,7 @@ If you want help getting started, [view the Real Estate Kit](${getResultPath("co
     excerpt:
       "From cost savings to environmental benefits, here is how solar grazing works and why marketplaces like Ombaa are helping more operators and farmers connect.",
     category: "Sustainability",
-    publishedAt: "April 11, 2026",
+    publishedAt: "April 12, 2026",
     readingTime: "7 min read",
     primaryCta: {
       href: "https://ombaa.com",
