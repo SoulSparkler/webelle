@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 
+// Elle coach API route — server-side proxy for OpenRouter
 export const runtime = "nodejs"
 
 interface Profile {
