@@ -2,38 +2,30 @@
 
 import { useState, useRef, useEffect } from "react";
 
-// Set up storage API
-if (typeof window !== 'undefined' && !window.storage) {
-  window.storage = {
-    get: async (key: string) => {
-      try {
-        const value = localStorage.getItem(key);
-        return value ? { value } : null;
-      } catch {
-        return null;
-      }
-    },
-    set: async (key: string, value: string) => {
-      try {
-        localStorage.setItem(key, value);
-      } catch {
-        // Silently fail if storage is full
-      }
-    },
-  };
+const STORAGE_PROFILE = "elle-profile";
+const STORAGE_SUMMARY = "elle-summary";
+
+function safeGet(key: string): string | null {
+  try { return typeof window !== "undefined" ? localStorage.getItem(key) : null; }
+  catch { return null; }
+}
+function safeSet(key: string, value: string) {
+  try { if (typeof window !== "undefined") localStorage.setItem(key, value); }
+  catch {}
 }
 
-// ââ Brand tokens (exact webelle.store) ââââââââââââââââââââââââââââââââââââââ
 const C = {
   pink:     "#E8A0BF",
   pinkD:    "#d4779f",
   purple:   "#B8A9D9",
   purpleD:  "#9B8EC4",
-  black:    "#1A1A1A",
+  ink:      "#1A1A1A",
   white:    "#FFFFFF",
-  offwhite: "#fafafa",
-  border:   "#efefef",
-  muted:    "#888",
+  cream:    "#FBF8F4",
+  paper:    "#F4EFE8",
+  border:   "#ECE4D9",
+  muted:    "#8a8378",
+  online:   "#5ECB87",
 };
 
 const KITS = [
@@ -41,156 +33,77 @@ const KITS = [
   "Vintage & Antique Seller",
   "Dog Walker & Pet Care",
   "Real Estate Personal Brand",
+  "AI Business Kit",
 ];
 
-const ELLE_OPENING = `Hi, I am Elle â your WebElle business coach.
+const ELLE_OPENING = `Hi, I'm Elle — your WebElle business coach.
 
-I am here to help you turn your kit into a real business. And I want to remember every step of your journey.
+I'm here to help you turn your kit into a real business. And I want to remember every step of your journey.
 
 Three quick things before we begin:
 
-What is your name?
-
-Which kit did you buy?
-
-And your email â so I can always bring you back to where we left off. No lost progress, no starting over.
+1. What's your name?
+2. Which kit did you buy?
+3. Your email — so I can always bring you back to where we left off. No lost progress, no starting over.
 
 Ready when you are.`;
 
-// ââ System prompt âââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
-function buildSystemPrompt(profile: any, summary: string) {
-  const summaryBlock = summary
-    ? `\n\nPREVIOUS SESSION SUMMARY:\n${summary}\n\nThis person is not a stranger. Reference this naturally. Pick up where you left off.`
-    : "";
-
-  return `You are Elle, the personal business coach for WebElle (webelle.store). You coach women who have purchased a WebElle starter kit.
-
-YOUR VOICE
-- Warm, direct, mentor-like. No fluff. No fake enthusiasm.
-- You ask questions that force clarity. You name what the person is avoiding â kindly but without hesitation.
-- Every session ends with one commitment: what will they do before you speak again.
-- Use their name where it lands with weight, not as filler.
-- Never open with "amazing" or "great" â respond to what was actually said.
-- Scope: business building and WebElle kits only. Redirect anything outside this warmly.
-- Max 250 words per response unless detail is specifically requested.
-- Short paragraphs. Dashes for lists. End with one question or one next step â never both.
-
-THE PERSON
-Name: ${profile.name || "not yet given"}
-Kit: ${profile.kit || "not yet given"}
-Started: ${profile.startDate || "today"}
-${summaryBlock}
-
-KIT KNOWLEDGE
-
-VIRTUAL ASSISTANT
-- Services: admin, email, calendar, social media scheduling, research, data entry
-- Platforms: Upwork (10 proposals/day, fixed-price first), LinkedIn, VA Facebook groups
-- Rates: $25-35/hr to start, grow to $50-75/hr. Packages: 10hr/month = $300-500
-- Niche early â social media VA, real estate VA, podcast VA
-- Day 7: Upwork profile live. Day 10: first proposal. Day 21: first client.
-- Common blocks: imposter syndrome, underpricing, not niching, waiting until "ready"
-
-VINTAGE AND ANTIQUE SELLER
-- Sourcing: thrift stores (Tue/Wed restocks), flea markets (arrive 30 min early), estate sales, Facebook Marketplace, Vinted, own home first
-- Platforms: Etsy (curated, higher prices) â eBay (brand names) â FB Marketplace (furniture) â Vinted (clothing)
-- Pricing: 3x markup minimum. Research: eBay sold listings, Google Lens, Etsy search
-- Photography: natural light, 5 shots (front, back, detail, scale, lifestyle). Phone is enough.
-- Description: WHAT + ERA + CONDITION + MEASUREMENTS + STORY
-- Day 7: source 10-20 items. Day 14: Etsy live. Day 21: second platform.
-- Common blocks: pricing uncertainty, overthinking photos, descriptions too short
-
-DOG WALKER AND PET CARE
-- Services: solo/group walks, pet sitting, puppy visits, cat care, daycare
-- Rates: â¬15-25/walk. Four to six walks/day = â¬60-150/day
-- Day one non-negotiable: public liability insurance. â¬15-30/month. Always.
-- Finding clients: 50 neighborhood flyers â local Facebook groups â Nextdoor â Rover/PetBacker
-- First walk free converts almost every meet-and-greet
-- Daily walk report with photos = biggest retention tool
-- Day 1: insurance. Week 2: 50 flyers. Week 3: first 3 paying clients.
-- Common blocks: undercharging, fear of overcommitting, not asking for reviews
-
-REAL ESTATE PERSONAL BRAND
-- Define niche before anything else: first-time buyers, luxury, families, investors
-- Content pillars: market updates, property showcases, buyer/seller tips, personal story, community
-- Priority: Instagram #1 â LinkedIn for referrals â Google Business Profile for local search
-- Reality: 3-6 months to build a real pipeline. Consistency beats perfection.
-- Day 7: website and Instagram live. Day 14: 10 posts created. Day 21: 2 open houses attended.
-- Tools: Canva, Coffee and Contracts, HubSpot free CRM, Later
-- Common blocks: perfectionism, waiting until ready, inconsistent posting
-
-COACHING PRINCIPLES
-- Overwhelmed: find the ONE thing. Not three. One.
-- Stuck: ask what they are afraid of underneath the practical question
-- Win shared: acknowledge genuinely, immediately ask what is next
-- Excuse made: acknowledge, redirect to what they can control right now
-- Unknown specifics (tax, local law): say so, point to the right professional`;
+interface Message {
+  role: "user" | "assistant";
+  content: string;
 }
 
-async function callElle(messages: any[], profile: any, summary: string) {
-  const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+interface Profile {
+  name: string;
+  kit: string;
+  email: string;
+  startDate: string;
+}
+
+async function callElle(messages: Message[], profile: Profile, summary: string): Promise<string> {
+  const res = await fetch("/api/elle", {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "Authorization": `Bearer ${process.env.NEXT_PUBLIC_OPENROUTER_API_KEY || ""}`,
-      "HTTP-Referer": typeof window !== 'undefined' ? window.location.origin : "https://webelle.store",
-    },
-    body: JSON.stringify({
-      model: "qwen/qwen3.6-plus",
-      max_tokens: 1000,
-      messages: [
-        { role: "system", content: buildSystemPrompt(profile, summary) },
-        ...messages.map(m => ({ role: m.role, content: m.content })),
-      ],
-    }),
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ mode: "chat", messages, profile, summary }),
   });
   const data = await res.json();
-  if (data.error) {
-    console.error("OpenRouter error:", data.error);
-    return "Something went wrong. Please try again.";
-  }
-  return data.choices?.[0]?.message?.content || "Something went wrong. Please try again.";
+  if (!res.ok) throw new Error(data?.error || "Request failed");
+  return data.content as string;
 }
 
-async function generateSummary(messages: any[], profile: any) {
-  const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+async function callSummary(messages: Message[], profile: Profile): Promise<string> {
+  const res = await fetch("/api/elle", {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "Authorization": `Bearer ${process.env.NEXT_PUBLIC_OPENROUTER_API_KEY || ""}`,
-      "HTTP-Referer": typeof window !== 'undefined' ? window.location.origin : "https://webelle.store",
-    },
-    body: JSON.stringify({
-      model: "qwen/qwen3.6-plus",
-      max_tokens: 200,
-      messages: [
-        {
-          role: "system",
-          content: "Write a 5-line coaching session summary. Third person. Be specific. Cover: who they are and which kit, what they are working on, what they committed to, what they are struggling with, which day/stage they are at. No fluff."
-        },
-        {
-          role: "user",
-          content: messages.map(m => `${m.role === "assistant" ? "Elle" : "Client"}: ${m.content}`).join("\n\n")
-        }
-      ],
-    }),
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ mode: "summary", messages, profile }),
   });
+  if (!res.ok) return "";
   const data = await res.json();
-  if (data.error) {
-    console.error("OpenRouter error:", data.error);
-    return "";
-  }
-  return data.choices?.[0]?.message?.content || "";
+  return (data.content as string) || "";
 }
 
-// ââ Typing dots âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+function Avatar({ size = 36 }: { size?: number }) {
+  return (
+    <div style={{
+      width: size, height: size, borderRadius: "50%", flexShrink: 0,
+      background: `linear-gradient(135deg, ${C.pink} 0%, ${C.purple} 100%)`,
+      display: "flex", alignItems: "center", justifyContent: "center",
+      color: C.white, fontWeight: 700,
+      fontFamily: "'Barlow Condensed', sans-serif",
+      fontSize: Math.round(size * 0.5),
+      letterSpacing: 0.5,
+      boxShadow: "0 2px 6px rgba(155,142,196,0.35)",
+    }}>E</div>
+  );
+}
+
 function Dots() {
   return (
-    <div style={{ display: "flex", gap: 4, alignItems: "center", padding: "2px 0" }}>
+    <div style={{ display: "flex", gap: 5, alignItems: "center", padding: "4px 2px" }}>
       {[0, 1, 2].map(i => (
         <span key={i} style={{
-          width: 5, height: 5, borderRadius: "50%",
-          background: C.purple, display: "inline-block",
+          width: 6, height: 6, borderRadius: "50%",
+          background: C.purpleD, display: "inline-block",
           animation: "elleDot 1.2s infinite",
           animationDelay: `${i * 0.16}s`,
         }} />
@@ -199,8 +112,7 @@ function Dots() {
   );
 }
 
-// ââ Message bubble ââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
-function Bubble({ msg }: { msg: any }) {
+function Bubble({ msg }: { msg: Message }) {
   const isElle = msg.role === "assistant";
   return (
     <div style={{
@@ -210,30 +122,25 @@ function Bubble({ msg }: { msg: any }) {
       alignItems: "flex-end",
       animation: "elleFadeUp 0.25s ease both",
     }}>
-      {isElle && (
-        <div style={{
-          width: 28, height: 28, borderRadius: "50%", flexShrink: 0,
-          background: C.black,
-          display: "flex", alignItems: "center", justifyContent: "center",
-          fontSize: 10, fontWeight: 700, color: C.white,
-          fontFamily: "'Barlow Condensed', sans-serif",
-          letterSpacing: 1, textTransform: "uppercase",
-        }}>E</div>
-      )}
+      {isElle && <Avatar size={32} />}
       <div style={{
-        maxWidth: "76%",
-        background: isElle ? C.white : C.black,
-        color: isElle ? C.black : C.white,
+        maxWidth: "78%",
+        background: isElle ? C.white : C.ink,
+        color: isElle ? C.ink : C.white,
         border: isElle ? `1px solid ${C.border}` : "none",
-        borderRadius: isElle ? "2px 14px 14px 14px" : "14px 2px 14px 14px",
-        padding: "11px 15px",
-        fontSize: 13.5, lineHeight: 1.72,
+        borderRadius: isElle ? "4px 18px 18px 18px" : "18px 4px 18px 18px",
+        padding: "12px 16px",
+        fontSize: 14, lineHeight: 1.6,
         fontFamily: "'DM Sans', sans-serif",
         whiteSpace: "pre-wrap",
+        boxShadow: isElle ? "0 1px 2px rgba(0,0,0,0.03)" : "0 2px 6px rgba(0,0,0,0.08)",
       }}
         dangerouslySetInnerHTML={{
           __html: msg.content
-            .replace(/\*\*(.*?)\*\*/g, `<strong>$1</strong>`)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
             .replace(/\n/g, "<br/>"),
         }}
       />
@@ -241,50 +148,49 @@ function Bubble({ msg }: { msg: any }) {
   );
 }
 
-// ââ Main ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 export default function ElleCoach() {
-  const [stage, setStage]             = useState("loading");
-  const [step, setStep]               = useState(0); // 0=name 1=kit 2=email
-  const [profile, setProfile]         = useState({ name: "", kit: "", email: "", startDate: "" });
-  const [summary, setSummary]         = useState("");
-  const [messages, setMessages]       = useState<any[]>([]);
-  const [textInput, setTextInput]     = useState("");
-  const [chatInput, setChatInput]     = useState("");
-  const [typing, setTyping]           = useState(false);
-  const bottomRef    = useRef<HTMLDivElement>(null);
-  const textRef      = useRef<HTMLInputElement>(null);
-  const chatRef      = useRef<HTMLTextAreaElement>(null);
+  const [stage, setStage]         = useState<"loading" | "onboard" | "chat">("loading");
+  const [step, setStep]           = useState(0);
+  const [profile, setProfile]     = useState<Profile>({ name: "", kit: "", email: "", startDate: "" });
+  const [summary, setSummary]     = useState("");
+  const [messages, setMessages]   = useState<Message[]>([]);
+  const [textInput, setTextInput] = useState("");
+  const [chatInput, setChatInput] = useState("");
+  const [typing, setTyping]       = useState(false);
+  const bottomRef = useRef<HTMLDivElement>(null);
+  const textRef   = useRef<HTMLInputElement>(null);
+  const chatRef   = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => { init(); }, []);
   useEffect(() => { bottomRef.current?.scrollIntoView({ behavior: "smooth" }); }, [messages, typing, step]);
 
   async function init() {
-    try {
-      const pr = await window.storage.get("elle-profile");
-      const sr = await window.storage.get("elle-summary");
-      if (pr?.value) {
-        const saved = JSON.parse(pr.value);
+    const stored = safeGet(STORAGE_PROFILE);
+    const storedSummary = safeGet(STORAGE_SUMMARY) || "";
+    if (stored) {
+      try {
+        const saved: Profile = JSON.parse(stored);
         setProfile(saved);
-        setSummary(sr?.value || "");
+        setSummary(storedSummary);
         setTyping(true);
-        const reply = await callElle(
-          [{ role: "user", content: "I am back." }],
-          saved, sr?.value || ""
-        );
-        setMessages([{ role: "assistant", content: reply }]);
+        try {
+          const reply = await callElle(
+            [{ role: "user", content: "I am back." }],
+            saved, storedSummary,
+          );
+          setMessages([{ role: "assistant", content: reply }]);
+        } catch {
+          setMessages([{ role: "assistant", content: `Welcome back, ${saved.name || "friend"}. Where did we leave off?` }]);
+        }
         setTyping(false);
         setStage("chat");
-      } else {
-        setMessages([{ role: "assistant", content: ELLE_OPENING }]);
-        setStage("onboard");
-      }
-    } catch {
-      setMessages([{ role: "assistant", content: ELLE_OPENING }]);
-      setStage("onboard");
+        return;
+      } catch {}
     }
+    setMessages([{ role: "assistant", content: ELLE_OPENING }]);
+    setStage("onboard");
   }
 
-  // ââ Onboarding steps âââââââââââââââââââââââââââââââââââââââââââââââââââ
   function submitName() {
     const name = textInput.trim();
     if (!name) return;
@@ -303,7 +209,7 @@ export default function ElleCoach() {
     setMessages(prev => [
       ...prev,
       { role: "user", content: kit },
-      { role: "assistant", content: `The ${kit} Kit â a strong foundation.\n\nOne last thing. What is your email? I will send you a private link back to this conversation whenever you need it. No lost progress, no starting over.\n\nYou can skip for now if you prefer.` },
+      { role: "assistant", content: `The ${kit} Kit — a strong foundation.\n\nOne last thing. What's your email? I'll send you a private link back to this conversation whenever you need it. No lost progress, no starting over.\n\nYou can skip for now if you prefer.` },
     ]);
     setStep(2);
   }
@@ -311,51 +217,53 @@ export default function ElleCoach() {
   async function submitEmail(skip = false) {
     const email = skip ? "" : textInput.trim();
     const startDate = new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
-    const fp = { ...profile, email, startDate };
+    const fp: Profile = { ...profile, email, startDate };
     setProfile(fp);
     setTextInput("");
-    try { await window.storage.set("elle-profile", JSON.stringify(fp)); } catch {}
-    const ack = skip ? "No problem â you can add it any time." : `Perfect. I will remember you, ${fp.name}.`;
+    safeSet(STORAGE_PROFILE, JSON.stringify(fp));
+    const ack = skip ? "No problem — you can add it any time." : `Perfect. I'll remember you, ${fp.name}.`;
     setMessages(prev => [...prev, { role: "user", content: skip ? "Skip for now" : email }]);
     setTyping(true);
     setStage("chat");
     try {
       const reply = await callElle(
         [{ role: "user", content: `My name is ${fp.name}. I just got the ${fp.kit} kit. Where do I start?` }],
-        fp, ""
+        fp, "",
       );
       setMessages(prev => [...prev, { role: "assistant", content: `${ack}\n\n${reply}` }]);
     } catch {
-      setMessages(prev => [...prev, { role: "assistant", content: `${ack}\n\nLet us start right here. Have you opened your kit yet, or is this day one?` }]);
+      setMessages(prev => [...prev, { role: "assistant", content: `${ack}\n\nLet's start right here. Have you opened your kit yet, or is this day one?` }]);
     } finally {
       setTyping(false);
       setTimeout(() => chatRef.current?.focus(), 100);
     }
   }
 
-  // ââ Chat âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
   async function sendChat() {
     const text = chatInput.trim();
     if (!text || typing) return;
-    const updated = [...messages, { role: "user", content: text }];
+    const updated: Message[] = [...messages, { role: "user", content: text }];
     setMessages(updated);
     setChatInput("");
+    if (chatRef.current) chatRef.current.style.height = "auto";
     setTyping(true);
     try {
       const reply = await callElle(updated, profile, summary);
-      const final = [...updated, { role: "assistant", content: reply }];
+      const final: Message[] = [...updated, { role: "assistant", content: reply }];
       setMessages(final);
       if (final.length >= 8 && final.length % 8 === 0) {
-        generateSummary(final, profile).then(async s => {
-          if (s) { setSummary(s); try { await window.storage.set("elle-summary", s); } catch {} }
+        callSummary(final, profile).then(s => {
+          if (s) { setSummary(s); safeSet(STORAGE_SUMMARY, s); }
         });
       }
     } catch {
-      setMessages(prev => [...prev, { role: "assistant", content: "Connection issue â please try again." }]);
+      setMessages(prev => [...prev, { role: "assistant", content: "Connection issue — please try again in a moment." }]);
     } finally { setTyping(false); }
   }
 
-  const onChatKey = (e: React.KeyboardEvent) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); sendChat(); } };
+  const onChatKey = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); sendChat(); }
+  };
   const onTextKey = (e: React.KeyboardEvent) => {
     if (e.key === "Enter") {
       e.preventDefault();
@@ -364,175 +272,193 @@ export default function ElleCoach() {
     }
   };
 
-  // ââ Render âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap');
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        body { background: ${C.offwhite}; }
+        html, body { height: 100%; }
+        body {
+          background: ${C.cream};
+          background-image:
+            radial-gradient(circle at 12% 18%, rgba(232,160,191,0.18), transparent 40%),
+            radial-gradient(circle at 88% 82%, rgba(184,169,217,0.20), transparent 45%);
+          font-family: 'DM Sans', sans-serif;
+        }
 
-        @keyframes elleDot     { 0%,80%,100% { transform:scale(.7); opacity:.4; } 40% { transform:scale(1); opacity:1; } }
-        @keyframes elleFadeUp  { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
-        @keyframes elleIn      { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
+        @keyframes elleDot     { 0%,80%,100% { transform:scale(.6); opacity:.35; } 40% { transform:scale(1); opacity:1; } }
+        @keyframes elleFadeUp  { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+        @keyframes elleIn      { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+        @keyframes ellePulse   { 0%,100% { opacity: 1; } 50% { opacity: 0.55; } }
+
+        .elle-pulse { animation: ellePulse 2s ease-in-out infinite; }
 
         .elle-kit-pill {
           background: ${C.white};
-          border: 1.5px solid ${C.black};
-          color: ${C.black};
-          border-radius: 2px;
+          border: 1.5px solid ${C.ink};
+          color: ${C.ink};
+          border-radius: 999px;
           padding: 9px 16px;
           font-size: 12px; font-weight: 600;
           font-family: 'DM Sans', sans-serif;
-          cursor: pointer; letter-spacing: 0.3px;
+          cursor: pointer; letter-spacing: 0.4px;
           transition: all 0.15s ease;
           text-transform: uppercase;
+          display: inline-flex; align-items: center; gap: 6px;
         }
         .elle-kit-pill:hover {
-          background: ${C.black};
+          background: ${C.ink};
           color: ${C.white};
+          transform: translateY(-1px);
         }
 
         .elle-input {
           width: 100%; border: 1.5px solid ${C.border};
           background: ${C.white};
-          border-radius: 2px; padding: 12px 14px;
+          border-radius: 10px; padding: 13px 16px;
           font-family: 'DM Sans', sans-serif; font-size: 14px;
-          color: ${C.black}; outline: none;
-          transition: border-color 0.15s;
+          color: ${C.ink}; outline: none;
+          transition: border-color 0.15s, box-shadow 0.15s;
         }
-        .elle-input:focus { border-color: ${C.black}; }
-        .elle-input::placeholder { color: #bbb; }
+        .elle-input:focus {
+          border-color: ${C.purpleD};
+          box-shadow: 0 0 0 3px rgba(155,142,196,0.18);
+        }
+        .elle-input::placeholder { color: #c2bbb1; }
 
         .elle-btn-primary {
-          background: ${C.black}; color: ${C.white};
-          border: none; border-radius: 2px;
+          background: ${C.ink}; color: ${C.white};
+          border: none; border-radius: 999px;
           padding: 11px 22px; font-size: 12px; font-weight: 600;
           font-family: 'DM Sans', sans-serif;
-          cursor: pointer; letter-spacing: 0.5px;
+          cursor: pointer; letter-spacing: 0.6px;
           text-transform: uppercase;
-          transition: background 0.15s;
-          display: inline-flex; align-items: center; gap: 6px;
+          transition: background 0.15s, transform 0.15s;
+          display: inline-flex; align-items: center; gap: 8px;
         }
-        .elle-btn-primary:hover { background: ${C.purpleD}; }
+        .elle-btn-primary:hover { background: ${C.purpleD}; transform: translateY(-1px); }
 
         .elle-btn-skip {
           background: none; border: none; cursor: pointer;
-          color: #bbb; font-size: 12px;
+          color: ${C.muted}; font-size: 12px;
           font-family: 'DM Sans', sans-serif;
           padding: 8px 0; text-decoration: underline;
           transition: color 0.15s;
         }
-        .elle-btn-skip:hover { color: #888; }
+        .elle-btn-skip:hover { color: ${C.ink}; }
 
         .elle-send {
-          width: 36px; height: 36px; border-radius: 2px;
-          background: ${C.black}; border: none; cursor: pointer;
+          width: 40px; height: 40px; border-radius: 50%;
+          background: ${C.ink}; border: none; cursor: pointer;
           display: flex; align-items: center; justify-content: center;
-          transition: background 0.15s; flex-shrink: 0;
+          transition: background 0.15s, transform 0.15s; flex-shrink: 0;
         }
-        .elle-send:hover  { background: ${C.purpleD}; }
-        .elle-send:disabled { background: #ddd; cursor: default; }
+        .elle-send:hover  { background: ${C.purpleD}; transform: scale(1.05); }
+        .elle-send:disabled { background: #d8d2c7; cursor: default; transform: none; }
 
         .elle-chat-textarea {
           flex: 1; border: none; outline: none; resize: none;
-          font-family: 'DM Sans', sans-serif; font-size: 13.5px;
-          color: ${C.black}; background: transparent; line-height: 1.5;
-          max-height: 96px;
+          font-family: 'DM Sans', sans-serif; font-size: 14px;
+          color: ${C.ink}; background: transparent; line-height: 1.5;
+          max-height: 110px; padding: 4px 0;
         }
-        .elle-chat-textarea::placeholder { color: #bbb; }
+        .elle-chat-textarea::placeholder { color: #c2bbb1; }
 
-        ::-webkit-scrollbar { width: 3px; }
+        .elle-input-shell {
+          display: flex; align-items: flex-end; gap: 10px;
+          border: 1.5px solid ${C.border};
+          border-radius: 22px; padding: 8px 8px 8px 16px;
+          background: ${C.white};
+          transition: border-color 0.15s, box-shadow 0.15s;
+        }
+        .elle-input-shell:focus-within {
+          border-color: ${C.purpleD};
+          box-shadow: 0 0 0 3px rgba(155,142,196,0.15);
+        }
+
+        ::-webkit-scrollbar { width: 4px; }
         ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: #e8e8e8; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb { background: #e0d8cb; border-radius: 4px; }
       `}</style>
 
       <div style={{
-        minHeight: "100vh", background: C.offwhite,
+        minHeight: "100vh",
         display: "flex", alignItems: "center", justifyContent: "center",
         padding: 16,
       }}>
         <div style={{
-          width: "100%", maxWidth: 480,
+          width: "100%", maxWidth: 500,
           display: "flex", flexDirection: "column",
-          height: "92vh", maxHeight: 740,
-          animation: "elleIn 0.35s ease both",
+          height: "94vh", maxHeight: 780,
+          animation: "elleIn 0.4s ease both",
+          background: C.cream,
           border: `1px solid ${C.border}`,
-          borderRadius: 3,
+          borderRadius: 20,
           overflow: "hidden",
-          boxShadow: "0 8px 40px rgba(0,0,0,0.07)",
+          boxShadow: "0 20px 60px rgba(26,26,26,0.10), 0 4px 12px rgba(26,26,26,0.04)",
         }}>
 
-          {/* ââ Header ââ */}
-          <div style={{ background: C.white, borderBottom: `1px solid ${C.border}` }}>
-            {/* Top bar */}
-            <div style={{
-              padding: "16px 20px 14px",
-              display: "flex", alignItems: "center", justifyContent: "space-between",
-            }}>
-              <div>
-                <div style={{ display: "flex", alignItems: "baseline", gap: 10 }}>
-                  <span style={{
-                    fontFamily: "'Barlow Condensed', sans-serif",
-                    fontWeight: 800, fontSize: 26,
-                    color: C.black, letterSpacing: 1.5,
-                    textTransform: "uppercase", lineHeight: 1,
-                  }}>ELLE</span>
-                  <span style={{
-                    background: C.purple, color: C.white,
-                    fontSize: 9, fontWeight: 700, letterSpacing: 1,
-                    padding: "3px 9px", borderRadius: 2,
-                    textTransform: "uppercase",
-                    fontFamily: "'DM Sans', sans-serif",
-                  }}>KIT EXCLUSIVE</span>
-                </div>
-                <div style={{
+          {/* Header */}
+          <div style={{
+            background: C.white,
+            borderBottom: `1px solid ${C.border}`,
+            padding: "16px 20px",
+            display: "flex", alignItems: "center", gap: 14,
+          }}>
+            <Avatar size={42} />
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <div style={{ display: "flex", alignItems: "baseline", gap: 8 }}>
+                <span style={{
+                  fontFamily: "'Barlow Condensed', sans-serif",
+                  fontWeight: 800, fontSize: 22,
+                  color: C.ink, letterSpacing: 1.4,
+                  textTransform: "uppercase", lineHeight: 1,
+                }}>ELLE</span>
+                <span style={{
+                  fontSize: 11, color: C.muted,
                   fontFamily: "'DM Sans', sans-serif",
-                  fontSize: 11.5, color: C.muted, marginTop: 2, letterSpacing: 0.2,
                 }}>
-                  Your WebElle business coach
-                </div>
+                  WebElle business coach
+                </span>
               </div>
-              <div style={{ textAlign: "right" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: 5, justifyContent: "flex-end" }}>
-                  <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#5ee77a" }} />
-                  <span style={{ fontSize: 11, color: C.muted, fontFamily: "'DM Sans', sans-serif" }}>Online</span>
-                </div>
-                {profile.name && (
-                  <div style={{ fontSize: 11, color: C.purple, fontFamily: "'DM Sans', sans-serif", marginTop: 2, fontWeight: 500 }}>
-                    {profile.name} â
-                  </div>
-                )}
+              <div style={{
+                display: "flex", alignItems: "center", gap: 6, marginTop: 6,
+              }}>
+                <span className="elle-pulse" style={{
+                  width: 7, height: 7, borderRadius: "50%", background: C.online,
+                }} />
+                <span style={{
+                  fontSize: 11, color: C.muted,
+                  fontFamily: "'DM Sans', sans-serif", letterSpacing: 0.2,
+                }}>
+                  Online{profile.name ? ` · with ${profile.name}` : ""}
+                </span>
               </div>
             </div>
           </div>
 
-          {/* ââ Messages ââ */}
+          {/* Messages */}
           <div style={{
             flex: 1, overflowY: "auto",
-            background: C.offwhite, padding: "18px 16px 10px",
+            padding: "20px 18px 12px",
           }}>
-
             {stage === "loading" && (
-              <div style={{ display: "flex", justifyContent: "center", paddingTop: 40 }}>
+              <div style={{ display: "flex", justifyContent: "center", paddingTop: 60 }}>
                 <Dots />
               </div>
             )}
 
             {messages.map((m, i) => <Bubble key={i} msg={m} />)}
 
-            {/* Typing */}
             {typing && (
-              <div style={{ display: "flex", alignItems: "flex-end", gap: 10, marginBottom: 14, animation: "elleFadeUp 0.25s ease" }}>
-                <div style={{
-                  width: 28, height: 28, borderRadius: "50%", flexShrink: 0,
-                  background: C.black, display: "flex", alignItems: "center", justifyContent: "center",
-                  fontSize: 10, fontWeight: 700, color: C.white,
-                  fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: 1,
-                }}>E</div>
+              <div style={{
+                display: "flex", alignItems: "flex-end", gap: 10, marginBottom: 14,
+                animation: "elleFadeUp 0.25s ease",
+              }}>
+                <Avatar size={32} />
                 <div style={{
                   background: C.white, border: `1px solid ${C.border}`,
-                  borderRadius: "2px 14px 14px 14px", padding: "11px 15px",
+                  borderRadius: "4px 18px 18px 18px", padding: "12px 16px",
                 }}>
                   <Dots />
                 </div>
@@ -541,37 +467,37 @@ export default function ElleCoach() {
 
             {/* Onboard inputs */}
             {stage === "onboard" && !typing && (
-              <div style={{ animation: "elleFadeUp 0.25s ease", paddingLeft: 38, marginBottom: 8 }}>
+              <div style={{ animation: "elleFadeUp 0.25s ease", paddingLeft: 42, marginBottom: 8 }}>
 
                 {step === 0 && (
-                  <div style={{ display: "flex", flexDirection: "column", gap: 8, maxWidth: 320 }}>
+                  <div style={{ display: "flex", flexDirection: "column", gap: 10, maxWidth: 340 }}>
                     <input
                       ref={textRef}
                       className="elle-input"
-                      placeholder="My name is..."
+                      placeholder="Type your name…"
                       value={textInput}
                       onChange={e => setTextInput(e.target.value)}
                       onKeyDown={onTextKey}
                       autoFocus
                     />
                     <button className="elle-btn-primary" onClick={submitName} style={{ alignSelf: "flex-start" }}>
-                      â That is me
+                      That's me →
                     </button>
                   </div>
                 )}
 
                 {step === 1 && (
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: 7 }}>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
                     {KITS.map(k => (
                       <button key={k} className="elle-kit-pill" onClick={() => selectKit(k)}>
-                        â {k}
+                        {k} →
                       </button>
                     ))}
                   </div>
                 )}
 
                 {step === 2 && (
-                  <div style={{ display: "flex", flexDirection: "column", gap: 8, maxWidth: 320 }}>
+                  <div style={{ display: "flex", flexDirection: "column", gap: 12, maxWidth: 340 }}>
                     <input
                       ref={textRef}
                       className="elle-input"
@@ -582,9 +508,9 @@ export default function ElleCoach() {
                       onKeyDown={onTextKey}
                       autoFocus
                     />
-                    <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
                       <button className="elle-btn-primary" onClick={() => submitEmail(false)}>
-                        â Save my progress
+                        Save my progress →
                       </button>
                       <button className="elle-btn-skip" onClick={() => submitEmail(true)}>
                         Skip for now
@@ -598,31 +524,25 @@ export default function ElleCoach() {
             <div ref={bottomRef} />
           </div>
 
-          {/* ââ Chat input ââ */}
+          {/* Chat input */}
           <div style={{
             background: C.white, borderTop: `1px solid ${C.border}`,
-            padding: "12px 14px 13px",
-            opacity: stage === "chat" ? 1 : 0,
+            padding: "12px 14px 14px",
+            opacity: stage === "chat" ? 1 : 0.45,
             pointerEvents: stage === "chat" ? "auto" : "none",
             transition: "opacity 0.3s",
           }}>
-            <div style={{
-              display: "flex", alignItems: "flex-end", gap: 8,
-              border: `1.5px solid ${C.border}`,
-              borderRadius: 2, padding: "9px 12px",
-              background: C.offwhite,
-              transition: "border-color 0.15s",
-            }}>
+            <div className="elle-input-shell">
               <textarea
                 ref={chatRef}
                 className="elle-chat-textarea"
                 rows={1}
-                placeholder={profile.name ? `Ask Elle anything, ${profile.name}...` : "Ask Elle anything..."}
+                placeholder={profile.name ? `Message Elle, ${profile.name}…` : "Message Elle…"}
                 value={chatInput}
                 onChange={e => {
                   setChatInput(e.target.value);
                   e.target.style.height = "auto";
-                  e.target.style.height = Math.min(e.target.scrollHeight, 96) + "px";
+                  e.target.style.height = Math.min(e.target.scrollHeight, 110) + "px";
                 }}
                 onKeyDown={onChatKey}
               />
@@ -630,20 +550,22 @@ export default function ElleCoach() {
                 className="elle-send"
                 onClick={sendChat}
                 disabled={!chatInput.trim() || typing}
+                aria-label="Send message"
               >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-                  stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="#fff" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="22" y1="2" x2="11" y2="13" />
                   <polygon points="22 2 15 22 11 13 2 9 22 2" />
                 </svg>
               </button>
             </div>
             <div style={{
-              marginTop: 8, fontSize: 10.5,
-              color: "#ccc", textAlign: "center",
-              fontFamily: "'DM Sans', sans-serif", letterSpacing: 0.3,
+              marginTop: 10, fontSize: 10.5,
+              color: C.muted, textAlign: "center",
+              fontFamily: "'DM Sans', sans-serif", letterSpacing: 1,
+              textTransform: "uppercase", opacity: 0.7,
             }}>
-              ELLE â WEBELLE.STORE â KIT BUYERS ONLY
+              Elle · webelle.store · Kit buyers only
             </div>
           </div>
 
