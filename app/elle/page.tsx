@@ -128,7 +128,7 @@ COACHING PRINCIPLES
 }
 
 async function callElle(messages: any[], profile: any, summary: string) {
-  const res = await fetch("https://openrouter.io/api/v1/chat/completions", {
+  const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -136,10 +136,12 @@ async function callElle(messages: any[], profile: any, summary: string) {
       "HTTP-Referer": typeof window !== 'undefined' ? window.location.origin : "https://webelle.store",
     },
     body: JSON.stringify({
-      model: "qwen/qwen-3.6b-plus",
+      model: "qwen/qwen-2.5-7b-instruct",
       max_tokens: 1000,
-      system: buildSystemPrompt(profile, summary),
-      messages: messages.map(m => ({ role: m.role, content: m.content })),
+      messages: [
+        { role: "system", content: buildSystemPrompt(profile, summary) },
+        ...messages.map(m => ({ role: m.role, content: m.content })),
+      ],
     }),
   });
   const data = await res.json();
@@ -151,7 +153,7 @@ async function callElle(messages: any[], profile: any, summary: string) {
 }
 
 async function generateSummary(messages: any[], profile: any) {
-  const res = await fetch("https://openrouter.io/api/v1/chat/completions", {
+  const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -159,7 +161,7 @@ async function generateSummary(messages: any[], profile: any) {
       "HTTP-Referer": typeof window !== 'undefined' ? window.location.origin : "https://webelle.store",
     },
     body: JSON.stringify({
-      model: "qwen/qwen-3.6b-plus",
+      model: "qwen/qwen-2.5-7b-instruct",
       max_tokens: 200,
       messages: [
         {

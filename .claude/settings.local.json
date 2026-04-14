@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s \"https://openrouter.ai/api/v1/models\")",
+      "Bash(python3 -c \"import sys,json; data=json.load\\(sys.stdin\\); models=[m['id'] for m in data['data'] if 'qwen' in m['id'].lower\\(\\)]; print\\('\\\\n'.join\\(sorted\\(models\\)[:20]\\)\\)\")",
+      "Bash(python3 -c ':*)",
+      "Bash(node -e ':*)",
+      "Bash(where node:*)",
+      "WebFetch(domain:www.etsy.com)"
+    ]
+  }
+}
