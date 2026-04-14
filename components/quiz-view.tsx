@@ -30,6 +30,7 @@ const questions: QuizQuestion[] = [
       { label: "Being active & outdoors", description: "Animals, nature, movement, fresh air", value: "active", color: "mint" },
       { label: "Organizing & helping", description: "Lists, planning, making things run smoothly", value: "organizer", color: "lavender" },
       { label: "Connecting people & places", description: "Local expert, networking, community", value: "connector", color: "peach" },
+      { label: "Working smarter with AI", description: "Prompts, tools, automation — making tech work for you", value: "ai", color: "lavender" },
     ],
   },
   {
