@@ -6,7 +6,8 @@
       "Bash(python3 -c ':*)",
       "Bash(node -e ':*)",
       "Bash(where node:*)",
-      "WebFetch(domain:www.etsy.com)"
+      "Bash(pnpm exec tsx -e ':*)",
+      "WebFetch(domain:openrouter.ai)"
     ]
   }
 }

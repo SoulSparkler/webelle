@@ -136,7 +136,7 @@ async function callElle(messages: any[], profile: any, summary: string) {
       "HTTP-Referer": typeof window !== 'undefined' ? window.location.origin : "https://webelle.store",
     },
     body: JSON.stringify({
-      model: "qwen/qwen-2.5-7b-instruct",
+      model: "qwen/qwen3.6-plus",
       max_tokens: 1000,
       messages: [
         { role: "system", content: buildSystemPrompt(profile, summary) },
@@ -161,7 +161,7 @@ async function generateSummary(messages: any[], profile: any) {
       "HTTP-Referer": typeof window !== 'undefined' ? window.location.origin : "https://webelle.store",
     },
     body: JSON.stringify({
-      model: "qwen/qwen-2.5-7b-instruct",
+      model: "qwen/qwen3.6-plus",
       max_tokens: 200,
       messages: [
         {
