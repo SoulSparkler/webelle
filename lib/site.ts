@@ -1,5 +1,5 @@
 export type ViewType = "home" | "quiz" | "result" | "kits" | "newsletter" | "blog"
-export type BusinessType = "curator" | "active" | "organizer" | "connector"
+export type BusinessType = "curator" | "active" | "organizer" | "connector" | "ai"
 
 export interface QuizAnswers {
   skills?: BusinessType
@@ -9,7 +9,7 @@ export interface QuizAnswers {
   priority?: string
 }
 
-export const businessTypes: BusinessType[] = ["organizer", "curator", "active", "connector"]
+export const businessTypes: BusinessType[] = ["organizer", "curator", "active", "connector", "ai"]
 
 export function getViewPath(view: Exclude<ViewType, "result">) {
   switch (view) {

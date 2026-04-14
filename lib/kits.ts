@@ -13,7 +13,7 @@ export interface KitInfo {
   includes: string[]
 }
 
-export const kitOrder: BusinessType[] = ["organizer", "curator", "active", "connector"]
+export const kitOrder: BusinessType[] = ["organizer", "curator", "active", "connector", "ai"]
 
 export const kitCatalog: Record<BusinessType, KitInfo> = {
   organizer: {
@@ -98,6 +98,29 @@ export const kitCatalog: Record<BusinessType, KitInfo> = {
       "5-email client nurture sequence",
       "15 social media post templates",
       "AI prompt kit and resource guide",
+    ],
+  },
+  ai: {
+    type: "ai",
+    badge: "AI POWERED",
+    name: "AI Business Kit for Women",
+    tagline: "Turn your AI skills into a real business — with a coach who never sleeps.",
+    description:
+      "For women who already dabble with ChatGPT or Claude but know there's more there. Get 8 practical files, 25 ready-to-use prompts, and Elle — a live AI coach available 24/7. No tech skills needed. Launch your AI-powered side hustle in 30 days.",
+    starterPriceLabel: "EUR 47",
+    premiumPriceLabel: "EUR 97",
+    starterLink: "https://www.etsy.com/listing/4488379140/ai-business-kit-for-women-live-ai-coach",
+    premiumLink: "https://www.etsy.com/listing/4488379140/ai-business-kit-for-women-live-ai-coach",
+    includes: [
+      "18-page Launch Guide — 7 chapters and a day-by-day 30-day plan",
+      "AI Toolkit Tracker — tool audit, prompt library, and time-saved calculator",
+      "25 ready-to-use Prompt Templates across 5 categories",
+      "Agent Setup Guide — Claude Projects, Custom GPTs, content repurposing pipeline",
+      "30-day Business Setup Checklist (printable tick-box sheet)",
+      "15 social media posts for Instagram, LinkedIn, and Facebook",
+      "AI Prompt Kit — the 6 universal WebElle prompts you'll use forever",
+      "Resource Guide — curated tools, communities, and books",
+      "Live AI Coach Elle — available 24/7, trained on every file in the kit",
     ],
   },
 }
