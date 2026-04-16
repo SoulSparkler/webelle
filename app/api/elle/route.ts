@@ -22,7 +22,7 @@ interface ElleRequest {
   summary?: string
 }
 
-const MODEL = "google/gemini-flash-1.5"
+const MODEL = "openai/gpt-4o-mini"
 
 function buildSystemPrompt(profile: Profile, summary: string) {
   const summaryBlock = summary
