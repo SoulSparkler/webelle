@@ -3,9 +3,10 @@ import type { NextRequest } from 'next/server'
 
 export function middleware(request: NextRequest) {
   const hostname = request.headers.get('host') || ''
+  const pathname = request.nextUrl.pathname
 
-  // If it's the elle subdomain, rewrite to /elle
-  if (hostname.startsWith('elle.')) {
+  // If it's the elle subdomain, rewrite to /elle (but NOT for API routes)
+  if (hostname.startsWith('elle.') && !pathname.startsWith('/api/')) {
     return NextResponse.rewrite(new URL('/elle', request.url))
   }
 
