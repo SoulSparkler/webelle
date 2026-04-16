@@ -22,7 +22,7 @@ interface ElleRequest {
   summary?: string
 }
 
-const MODEL = "qwen/qwen3.6-plus"
+const MODEL = "google/gemini-flash-1.5"
 
 function buildSystemPrompt(profile: Profile, summary: string) {
   const summaryBlock = summary
