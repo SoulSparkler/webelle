@@ -143,3 +143,4 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     </div>
   )
 }
+<!-- Deployment trigger: Mon May 18 19:18:41 CEST 2026 -->
