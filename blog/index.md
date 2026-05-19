@@ -54,6 +54,13 @@ Content strategy, platform recommendations, lead magnets, and the exact 30-day l
 
 ---
 
+### [2026 AI Business Launch: The Ultimate Kit for Women Entrepreneurs](/blog/ai-business-launch-guide)
+**Launch a profitable AI business with zero coding knowledge in 48 hours.**
+
+Learn the top 5 AI business models, setup guides, pricing strategies, and how our €67 kit gets you started fast.
+
+---
+
 ## Featured Resources
 
 ### WebElle Starter Kits
@@ -66,7 +73,8 @@ Each business path has a dedicated starter kit with templates, checklists, and s
 | Vintage Seller | €47 | Sourcing guide, pricing calculator, listing templates |
 | Dog Walker | €47 | Service agreement, booking system, marketing templates |
 | Real Estate Brand | €47 | Brand worksheet, 90-day content calendar, lead magnets |
-| **All 4 Kits** | **€97** | Complete bundle (30% savings) |
+| AI Business | €67 | Tool stack guide, 500+ prompts, client templates |
+| **All 5 Kits** | **€127** | Complete bundle (30% savings) |
 
 [View All Starter Kits →](/kits)
 
