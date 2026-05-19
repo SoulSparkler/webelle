@@ -601,7 +601,7 @@ A major challenge in this market is simply helping qualified partners find each 
 
 That is where Ombaa comes in. It helps connect solar operators and grazing providers so projects can move from interest to execution faster.
 
-    content: `## Introduction
+## Final takeaway
 
 Solar grazing sits at the intersection of clean energy, land stewardship, and agricultural opportunity. For the right operator and the right farmer, it is a practical win on both sides.
 
