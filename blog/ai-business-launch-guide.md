@@ -20,6 +20,8 @@ This guide breaks down exactly what you need to launch a successful AI business 
 - Solo AI business owners average €3,200/month in revenue within 6 months
 - 82% of clients prefer working with consultants who provide ready-to-use toolkits
 
+If you're considering a Virtual Assistant business, our [Virtual Assistant Costs Guide](/blog/virtual-assistant-costs-guide) shows how AI tools can double your hourly rate compared to traditional VAs.
+
 ### Low Barrier to Entry
 Unlike traditional tech businesses, AI businesses require:
 - No coding knowledge (no-code AI tools handle the heavy lifting)
