@@ -13,7 +13,7 @@ export interface KitInfo {
   includes: string[]
 }
 
-export const kitOrder: BusinessType[] = ["organizer", "curator", "active", "connector", "ai"]
+export const kitOrder: BusinessType[] = ["ai", "organizer", "curator", "active", "connector"]
 
 export const kitCatalog: Record<BusinessType, KitInfo> = {
   organizer: {
@@ -23,10 +23,10 @@ export const kitCatalog: Record<BusinessType, KitInfo> = {
     tagline: "Turn your organizational superpowers into a thriving service business.",
     description:
       "Perfect for natural organizers who love making things run smoothly. Help busy professionals and entrepreneurs manage their calendars, emails, and admin tasks.",
-    starterPriceLabel: "EUR 47",
-    premiumPriceLabel: "EUR 97",
-    starterLink: "https://buy.stripe.com/3cI3cwbgq35Zd4X5E4cV204",
-    premiumLink: "https://buy.stripe.com/00w4gA70a4a3gh99UkcV203",
+    starterPriceLabel: "$47",
+    premiumPriceLabel: "$97",
+    starterLink: "https://buy.stripe.com/dRmbJ2ckufSL0ib9UkcV20k",
+    premiumLink: "https://buy.stripe.com/4gM3cw1FQcGz2qj0jKcV20l",
     includes: [
       "Zero-to-first-client launch guide",
       "Service menu and rate card template",
@@ -44,10 +44,10 @@ export const kitCatalog: Record<BusinessType, KitInfo> = {
     tagline: "Turn your eye for treasure into a profitable business.",
     description:
       "Ideal for those who love the thrill of the hunt. Source unique finds and build a loyal customer base who appreciate curated quality.",
-    starterPriceLabel: "EUR 47",
-    premiumPriceLabel: "EUR 97",
-    starterLink: "https://buy.stripe.com/8x25kEckueOH9SLaYocV20a",
-    premiumLink: "https://buy.stripe.com/bJeaEYgAK9un0ibd6wcV209",
+    starterPriceLabel: "$47",
+    premiumPriceLabel: "$97",
+    starterLink: "https://buy.stripe.com/3cI3cw3NYeOH4yr1nOcV20e",
+    premiumLink: "https://buy.stripe.com/fZu8wQ0BMcGz9SL9UkcV20f",
     includes: [
       "Complete sourcing-to-first-sale launch guide",
       "Phone photography guide for vintage items",
@@ -65,10 +65,10 @@ export const kitCatalog: Record<BusinessType, KitInfo> = {
     tagline: "Get paid to spend time with furry friends.",
     description:
       "Perfect for animal lovers who want to stay active. Build a local reputation and enjoy flexible hours while doing what you love.",
-    starterPriceLabel: "EUR 47",
-    premiumPriceLabel: "EUR 97",
-    starterLink: "https://buy.stripe.com/cNi5kE2JU4a35Cv5E4cV206",
-    premiumLink: "https://buy.stripe.com/4gMcN6gAK8qj9SL5E4cV205",
+    starterPriceLabel: "$47",
+    premiumPriceLabel: "$97",
+    starterLink: "https://buy.stripe.com/7sY5kEesCayrd4XaYocV20i",
+    premiumLink: "https://buy.stripe.com/8x2bJ2acm6ib5CvaYocV20j",
     includes: [
       "First-client-in-2-weeks launch guide",
       "Service pricing calculator",
@@ -86,10 +86,10 @@ export const kitCatalog: Record<BusinessType, KitInfo> = {
     tagline: "Leverage your local knowledge and people skills.",
     description:
       "Great for natural connectors who know their community inside out. Help people find their dream homes while building valuable relationships.",
-    starterPriceLabel: "EUR 47",
-    premiumPriceLabel: "EUR 97",
-    starterLink: "https://buy.stripe.com/eVq6oI98idKDd4X7MccV207",
-    premiumLink: "https://buy.stripe.com/5kQeVebgq21V2qjfeEcV208",
+    starterPriceLabel: "$47",
+    premiumPriceLabel: "$97",
+    starterLink: "https://buy.stripe.com/cNi3cw2JU4a3c0TfeEcV20h",
+    premiumLink: "https://buy.stripe.com/00w4gA3NY0XR2qj4A0cV20g",
     includes: [
       "Brand-building launch guide",
       "Listing presentation template",
@@ -107,10 +107,10 @@ export const kitCatalog: Record<BusinessType, KitInfo> = {
     tagline: "Turn your AI skills into a real business — with a coach who never sleeps.",
     description:
       "For women who already dabble with ChatGPT or Claude but know there's more there. Get 8 practical files, 25 ready-to-use prompts, and Elle — a live AI coach available 24/7. No tech skills needed. Launch your AI-powered side hustle in 30 days.",
-    starterPriceLabel: "EUR 47",
-    premiumPriceLabel: "EUR 97",
-    starterLink: "https://www.etsy.com/listing/4488379140/ai-business-kit-for-women-live-ai-coach",
-    premiumLink: "https://www.etsy.com/listing/4488379140/ai-business-kit-for-women-live-ai-coach",
+    starterPriceLabel: "$47",
+    premiumPriceLabel: "$97",
+    starterLink: "https://buy.stripe.com/dRm4gA98i4a39SL5E4cV20d",
+    premiumLink: "https://buy.stripe.com/bJe4gAcku35Zd4X5E4cV20c",
     includes: [
       "18-page Launch Guide — 7 chapters and a day-by-day 30-day plan",
       "AI Toolkit Tracker — tool audit, prompt library, and time-saved calculator",
