@@ -15,11 +15,30 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'WebElle - Business Starter Kits for Women',
+  metadataBase: new URL('https://webelle.store'),
+  title: {
+    default: 'WebElle - Business Starter Kits for Women',
+    template: '%s | WebElle',
+  },
   description: 'Personalized Business Starter Kits for women 35+ who want to start a side hustle. Launch your dream business this weekend.',
-  generator: 'v0.app',
   icons: {
     icon: '/favicon.svg',
+  },
+  openGraph: {
+    title: 'WebElle - Business Starter Kits for Women',
+    description: 'Personalized Business Starter Kits for women 35+ who want to start a side hustle. Launch your dream business this weekend.',
+    url: 'https://webelle.store',
+    siteName: 'WebElle',
+    type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'WebElle - Business Starter Kits for Women',
+    description: 'Personalized Business Starter Kits for women 35+ who want to start a side hustle. Launch your dream business this weekend.',
+  },
+  alternates: {
+    canonical: 'https://webelle.store',
   },
 }
 
