@@ -1,7 +1,9 @@
 "use client"
 
+import Link from "next/link"
 import type { BusinessType, ViewType } from "@/lib/site"
 import { kitCatalog, kitOrder } from "@/lib/kits"
+import { promptCatalog } from "@/lib/prompts"
 
 interface KitBrowserViewProps {
   onViewKit: (kitType: BusinessType) => void
@@ -64,6 +66,41 @@ export function KitBrowserView({ onViewKit, navigateTo }: KitBrowserViewProps) {
             )
           })}
         </div>
+
+        {Object.values(promptCatalog).map((pack) => (
+          <div
+            key={pack.slug}
+            className="bg-card border border-border rounded-2xl p-8 hover:translate-y-[-4px] hover:shadow-xl transition-all duration-300"
+          >
+            <span className="inline-block bg-mint text-foreground px-3 py-1 rounded-full text-xs font-bold uppercase mb-4">
+              {pack.badge}
+            </span>
+
+            <h2 className="font-[var(--font-anton)] text-3xl uppercase tracking-tight mb-1">
+              {pack.name}
+            </h2>
+            <p className="font-[var(--font-anton)] text-lg uppercase tracking-tight text-muted-foreground mb-3">
+              {pack.headline}
+            </p>
+
+            <p className="text-pink font-medium mb-4">{pack.tagline}</p>
+
+            <p className="text-muted-foreground mb-6">{pack.description}</p>
+
+            <div className="mb-6">
+              <span className="text-4xl font-bold">{pack.priceLabel}</span>
+              <span className="text-muted-foreground ml-2">instant download</span>
+            </div>
+
+            <Link
+              href={`/prompts/${pack.slug}`}
+              className="group flex items-center justify-center gap-2 bg-primary text-primary-foreground w-full py-4 rounded-full font-semibold text-lg hover:scale-[1.02] transition-transform"
+            >
+              <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
+              VIEW PROMPT PACK
+            </Link>
+          </div>
+        ))}
 
         <div className="bg-lavender-light rounded-2xl p-8 sm:p-12 text-center">
           <h2 className="font-[var(--font-anton)] text-3xl sm:text-4xl uppercase tracking-tight mb-4">

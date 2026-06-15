@@ -1,7 +1,9 @@
 "use client"
 
+import Link from "next/link"
 import type { BusinessType } from "@/lib/site"
 import { kitCatalog, kitOrder } from "@/lib/kits"
+import { promptCatalog } from "@/lib/prompts"
 
 interface BrowseKitsSectionProps {
   onViewKit: (kitType: BusinessType) => void
@@ -54,6 +56,41 @@ export function BrowseKitsSection({ onViewKit }: BrowseKitsSectionProps) {
               </div>
             )
           })}
+
+          {Object.values(promptCatalog).map((pack) => (
+            <div
+              key={pack.slug}
+              className="bg-card border border-border rounded-2xl p-6 hover:translate-y-[-4px] hover:shadow-xl transition-all duration-300 flex flex-col"
+            >
+              <span className="inline-block self-start bg-mint text-foreground px-3 py-1 rounded-full text-xs font-bold uppercase mb-4">
+                {pack.badge}
+              </span>
+
+              <h3 className="font-[var(--font-anton)] text-2xl uppercase tracking-tight mb-1">
+                {pack.name}
+              </h3>
+              <p className="font-[var(--font-anton)] text-sm uppercase tracking-tight text-muted-foreground mb-2">
+                {pack.headline}
+              </p>
+
+              <p className="text-muted-foreground text-sm mb-6 flex-1">
+                {pack.tagline}
+              </p>
+
+              <div className="mb-4">
+                <span className="text-3xl font-bold">{pack.priceLabel}</span>
+                <span className="text-muted-foreground text-sm ml-2">instant download</span>
+              </div>
+
+              <Link
+                href={`/prompts/${pack.slug}`}
+                className="group flex items-center justify-center gap-2 bg-primary text-primary-foreground w-full py-3 rounded-full font-semibold hover:scale-[1.02] transition-transform"
+              >
+                <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
+                VIEW PROMPT PACK
+              </Link>
+            </div>
+          ))}
         </div>
       </div>
     </section>
