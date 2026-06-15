@@ -9,6 +9,16 @@ Discover your perfect business path with our comprehensive guides and resources.
 
 ## Latest Posts
 
+### [Business Starter Kits for Women Entrepreneurs in 2026: Launch 5 Proven Paths](/blog/business-starter-kits-women-entrepreneurs-2026)
+**Launch a virtual assistant, vintage reselling, dog walking, real estate, or solar grazing business with our done-for-you kits.**
+
+Everything you need to start earning €500-€4000/month in 48 hours:
+- 5 proven business models
+- Templates, checklists, and systems included
+- €47 digital kit or €97 with pre-built website
+
+---
+
 ### [Find Your Perfect Business: Take Our Free Quiz](/blog/find-your-perfect-business-quiz)
 **2-minute assessment to discover your ideal side hustle or business path.**
 
@@ -54,6 +64,13 @@ Content strategy, platform recommendations, lead magnets, and the exact 30-day l
 
 ---
 
+### [2026 AI Business Launch: The Ultimate Kit for Women Entrepreneurs](/blog/ai-business-launch-guide)
+**Launch a profitable AI business with zero coding knowledge in 48 hours.**
+
+Learn the top 5 AI business models, setup guides, pricing strategies, and how our €67 kit gets you started fast.
+
+---
+
 ## Featured Resources
 
 ### WebElle Starter Kits
@@ -66,7 +83,8 @@ Each business path has a dedicated starter kit with templates, checklists, and s
 | Vintage Seller | €47 | Sourcing guide, pricing calculator, listing templates |
 | Dog Walker | €47 | Service agreement, booking system, marketing templates |
 | Real Estate Brand | €47 | Brand worksheet, 90-day content calendar, lead magnets |
-| **All 4 Kits** | **€97** | Complete bundle (30% savings) |
+| AI Business | €67 | Tool stack guide, 500+ prompts, client templates |
+| **All 5 Kits** | **€127** | Complete bundle (30% savings) |
 
 [View All Starter Kits →](/kits)
 
