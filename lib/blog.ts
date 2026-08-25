@@ -72,7 +72,7 @@ If you want optional upgrades, you can add:
 - A simple portfolio site
 - Loom for quick client walkthroughs
 
-A lean launch often lands somewhere between EUR 47 and EUR 150 depending on whether you pay for branding tools and a website right away.
+A lean launch often lands somewhere between $47 and $150 depending on whether you pay for branding tools and a website right away.
 
 ## What is actually worth paying for
 
@@ -344,7 +344,7 @@ Your first expenses are usually:
 - Cleaning supplies
 - Shipping labels or packaging basics
 
-A lean starting budget often falls around EUR 200. If you already have a phone with a decent camera and a clean place to take photos, you can start even lighter.
+A lean starting budget often falls around $200. If you already have a phone with a decent camera and a clean place to take photos, you can start even lighter.
 
 ## Where to source your first inventory
 
@@ -435,7 +435,7 @@ If you want the fastest path, [view the Vintage Seller Kit](${getResultPath("cur
   },
   {
     slug: "start-dog-walking-business",
-    title: "Dog Walking Business: How to Start and Make EUR 1,000/Month in 30 Days",
+    title: "Dog Walking Business: How to Start and Make $1,000/Month in 30 Days",
     description:
       "Turn your love for dogs into income with a simple dog walking setup, a client plan, and a realistic first-month launch strategy.",
     excerpt:
@@ -474,7 +474,7 @@ Most first-time dog walkers begin with a small setup:
 - Weather-appropriate clothes
 - A simple intake form for each dog
 
-Depending on what you already own, many people can get started for around EUR 100 to EUR 150.
+Depending on what you already own, many people can get started for around $100 to $150.
 
 ## What you can charge
 
