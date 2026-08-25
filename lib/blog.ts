@@ -772,7 +772,7 @@ To learn more, [visit Ombaa](https://ombaa.com).`,
     description:
       "Launch a profitable AI business with zero coding knowledge in 48 hours. Learn the top 5 AI business models, setup guides, and pricing strategies.",
     excerpt:
-      "Discover how to launch an AI business in 2026 without coding. Explore 5 business models, tool stacks, and our €67 AI Business Kit.",
+      "Discover how to launch an AI business in 2026 without coding. Explore 5 business models, tool stacks, and our $47 30-Day Business Kit.",
     category: "AI Business",
     publishedAt: "May 18, 2026",
     readingTime: "7 min read",
@@ -780,7 +780,7 @@ To learn more, [visit Ombaa](https://ombaa.com).`,
     businessType: "ai",
     primaryCta: {
       href: getResultPath("ai"),
-      label: "View the AI Business Kit",
+      label: "View the 30-Day Business Kit",
     },
     secondaryCta: {
       href: "/quiz",
@@ -795,7 +795,7 @@ To learn more, [visit Ombaa](https://ombaa.com).`,
 
 The AI revolution isn't just for tech bros anymore. In 2026, women entrepreneurs are leveraging artificial intelligence to launch lean, profitable businesses with minimal upfront costs. Whether you're looking to start an AI consulting firm, build automated content businesses, or offer AI implementation services, the right toolkit can cut your launch time by 60%.
 
-This guide breaks down exactly what you need to launch a successful AI business this year, plus how our new AI Business Kit gives you everything to start in under 48 hours.
+This guide breaks down exactly what you need to launch a successful AI business this year, plus how our new 30-Day Business Kit gives you everything to start in under 48 hours.
 
 ---
 
@@ -847,9 +847,9 @@ Host paid workshops teaching business owners how to use AI tools.
 
 ---
 
-## WebElle AI Business Kit: Everything You Need to Launch
+## WebElle 30-Day Business Kit: Everything You Need to Launch
 
-**Starting at just €67**, our AI Business Kit includes:
+**Starting at just $47**, our 30-Day Business Kit includes:
 
 ✅ **AI Tool Stack Guide** – Top 20 tools for 2026 with setup instructions
 ✅ **Client Proposal Template** – Win clients in 3 days or less
@@ -913,7 +913,7 @@ Follow our **Client Outreach Script** to contact 20 warm leads. Our users averag
 
 Launching an AI business in 2026 is the most accessible path to entrepreneurship for women. You don't need a tech background, massive capital, or years of experience. You just need the right toolkit and a willingness to learn.
 
-Our AI Business Kit has helped 127 women launch profitable AI businesses in Q1 2026 alone. Will you be next?
+Our 30-Day Business Kit has helped 127 women launch profitable AI businesses in Q1 2026 alone. Will you be next?
 
 ---
 
@@ -921,7 +921,7 @@ Our AI Business Kit has helped 127 women launch profitable AI businesses in Q1 2
 
 **🎯 Take Our Free Business Match Quiz** to discover which AI business model fits your skills and goals.
 
-**📥 Download the AI Business Kit** for €67 and launch in 48 hours.
+**📥 Download the 30-Day Business Kit** for $47 and launch in 48 hours.
 
 **💬 Questions?** Leave a comment below or email us at hello@webelle.store
 
@@ -999,12 +999,12 @@ If a side hustle doesn't meet all three, skip it.
 
 ### 1. AI Business Consultant 🤖
 **What You Do:** Help small businesses implement AI tools (ChatGPT, Claude, automation)
-**Startup Cost:** €67 (AI Business Kit)
+**Startup Cost:** $47 (30-Day Business Kit)
 **Earning Potential:** €75-€150/hour
 **Time Commitment:** 5-10 hours/week
 **Best For:** Tech-curious women who want premium rates
 
-**WebElle Kit:** [AI Business Kit (€67)](/kits) – Includes 500+ prompts, tool guides, client templates
+**WebElle Kit:** [30-Day Business Kit ($47)](/kits) – Includes 500+ prompts, tool guides, client templates
 
 ---
 
@@ -1121,7 +1121,7 @@ Take our [2-minute Business Match Quiz](/quiz) to discover which side hustle fit
 The fastest way to launch a side hustle in 2026 is:
 
 1. **Take the Quiz** → [Find Your Perfect Business](/quiz) (2 minutes)
-2. **Get Your Kit** → [Browse All Kits](/kits) (€47-€67)
+2. **Get Your Kit** → [Browse All Kits](/kits) (€47-$47)
 3. **Launch in 48 Hours** → Follow the checklists (step-by-step)
 
 Stop researching. Start doing.
@@ -1131,7 +1131,7 @@ Stop researching. Start doing.
 ## FAQ
 
 **Q: How much money do I need to start?**
-A: Most WebElle kits cost €47-€67. Vintage reselling needs €200-500 for inventory. That's it.
+A: Most WebElle kits cost €47-$47. Vintage reselling needs €200-500 for inventory. That's it.
 
 **Q: Can I start while working full-time?**
 A: Yes! All 7 side hustles can start with 5-10 hours/week.
@@ -1212,7 +1212,7 @@ If it needs constant hustling, it's not passive. It's a job.
 
 ### 2. AI-Generated Content Packages 🤖
 **What You Sell:** Pre-written blog posts, social media calendars, email sequences
-**Startup Cost:** €67 (AI Business Kit)
+**Startup Cost:** $47 (30-Day Business Kit)
 **Time to Launch:** 1-2 days (using AI prompts)
 **Earning Potential:** €1,000-€3,000/month
 **Passive Factor:** ⭐⭐⭐⭐⭐ (Fully automated with AI)
@@ -1285,7 +1285,7 @@ Here's why 2026 is different: **AI tools cut your upfront work by 70%.**
 - **Print-on-Demand:** AI creates designs in seconds
 - **Blog Posts:** AI drafts articles (you edit and optimize)
 
-Our [AI Business Kit (€67)](/kits) includes 500+ prompts to automate all 7 income streams above.
+Our [30-Day Business Kit ($47)](/kits) includes 500+ prompts to automate all 7 income streams above.
 
 ---
 
@@ -1328,7 +1328,7 @@ Our [AI Business Kit (€67)](/kits) includes 500+ prompts to automate all 7 inc
 The fastest way to start passive income in 2026:
 
 1. **Take the Quiz** → [Find Your Income Style](/quiz) (2 minutes)
-2. **Get the Right Kit** → [Browse All Kits](/kits) (€47-€67)
+2. **Get the Right Kit** → [Browse All Kits](/kits) (€47-$47)
 3. **Launch in 48 Hours** → Follow our automation checklists
 
 Stop trading time for money. Build income that lasts.
@@ -1370,7 +1370,7 @@ A: Print-on-demand and stock photography can start with €0. Others need €47-
     businessType: "ai",
     primaryCta: {
       href: getResultPath("ai"),
-      label: "Get the AI Business Kit",
+      label: "Get the 30-Day Business Kit",
     },
     secondaryCta: {
       href: "/quiz",
@@ -1403,7 +1403,7 @@ We tested 200+ tools so you don't have to. Here are the 15 best AI tools for sma
 - Write SEO-optimized blog posts (2,000+ words) in 30 minutes
 - Create personalized email sequences for every customer segment
 
-**WebElle Tip:** Our [AI Business Kit (€67)](/kits) includes 500+ pre-tested prompts for ChatGPT!
+**WebElle Tip:** Our [30-Day Business Kit ($47)](/kits) includes 500+ pre-tested prompts for ChatGPT!
 
 ---
 
@@ -1598,7 +1598,7 @@ We tested 200+ tools so you don't have to. Here are the 15 best AI tools for sma
 The fastest way to implement AI in your small business:
 
 1. **Take the Quiz** → [Find Your AI Business Model](/quiz) (2 minutes)
-2. **Get the Kit** → [AI Business Kit (€67)](/kits) (includes 500+ prompts)
+2. **Get the Kit** → [30-Day Business Kit ($47)](/kits) (includes 500+ prompts)
 3. **Launch in 48 Hours** → Follow our step-by-step implementation guides
 
 Stop doing everything manually. Let AI handle the 80% so you can focus on the 20% that grows your business.
@@ -1620,7 +1620,7 @@ A: Most businesses save 10+ hours in week 1. Revenue increases show in month 2-3
 A: Yes, all recommended tools have monthly subscriptions (no annual contracts).
 
 **Q: What if I get stuck?**
-A: Our AI Business Kit includes implementation support and a private community.
+A: Our 30-Day Business Kit includes implementation support and a private community.
 
 ---
 
