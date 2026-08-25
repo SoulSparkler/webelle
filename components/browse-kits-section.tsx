@@ -87,7 +87,7 @@ export function BrowseKitsSection({ onViewKit }: BrowseKitsSectionProps) {
                 className="group flex items-center justify-center gap-2 bg-primary text-primary-foreground w-full py-3 rounded-full font-semibold hover:scale-[1.02] transition-transform"
               >
                 <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
-                VIEW PROMPT PACK
+                VIEW TEMPLATE LIBRARY
               </Link>
             </div>
           ))}

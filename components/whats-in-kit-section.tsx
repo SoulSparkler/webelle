@@ -8,7 +8,7 @@ const kitItems = [
   },
   {
     title: "Website Template",
-    description: "Professional, mobile-ready website template you can customize in minutes (€97 kit only).",
+    description: "Professional, mobile-ready website template you can customize in minutes ($97 kit only).",
     bgColor: "bg-lavender-light",
   },
   {
@@ -17,8 +17,8 @@ const kitItems = [
     bgColor: "bg-mint-light",
   },
   {
-    title: "AI Prompt Kit",
-    description: "Done-for-you prompts for marketing copy, social posts, and client communications.",
+    title: "Done-for-You Prompts",
+    description: "Ready-to-use prompts for marketing copy, social posts, and client communications.",
     bgColor: "bg-peach-light",
   },
 ]

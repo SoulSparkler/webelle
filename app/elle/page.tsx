@@ -33,10 +33,10 @@ const KITS = [
   "Vintage & Antique Seller",
   "Dog Walker & Pet Care",
   "Real Estate Personal Brand",
-  "AI Business Kit",
+  "30-Day Business Kit",
 ];
 
-const ELLE_OPENING = `Hi, I'm Elle — your WebElle business coach.
+const ELLE_OPENING = `Hi, I'm Elle — your WebElle launch partner.
 
 I'm here to help you turn your kit into a real business. And I want to remember every step of your journey.
 
@@ -418,7 +418,7 @@ export default function ElleCoach() {
                   fontSize: 11, color: C.muted,
                   fontFamily: "'DM Sans', sans-serif",
                 }}>
-                  WebElle business coach
+                  Your WebElle launch partner
                 </span>
               </div>
               <div style={{
