@@ -59,7 +59,7 @@ export function PromptPackView({ slug }: PromptPackViewProps) {
               <span className="text-5xl font-bold">{pack.priceLabel}</span>
             </div>
             <p className="text-muted-foreground mb-6 text-sm">
-              110 prompts &middot; Works with ChatGPT &amp; Claude
+              110 templates &middot; Works with the tools you already use
             </p>
             <a
               href={pack.stripeLink}

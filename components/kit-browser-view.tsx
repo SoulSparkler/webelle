@@ -97,7 +97,7 @@ export function KitBrowserView({ onViewKit, navigateTo }: KitBrowserViewProps) {
               className="group flex items-center justify-center gap-2 bg-primary text-primary-foreground w-full py-4 rounded-full font-semibold text-lg hover:scale-[1.02] transition-transform"
             >
               <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
-              VIEW PROMPT PACK
+              VIEW TEMPLATE LIBRARY
             </Link>
           </div>
         ))}

@@ -30,7 +30,7 @@ const questions: QuizQuestion[] = [
       { label: "Being active & outdoors", description: "Animals, nature, movement, fresh air", value: "active", color: "mint" },
       { label: "Organizing & helping", description: "Lists, planning, making things run smoothly", value: "organizer", color: "lavender" },
       { label: "Connecting people & places", description: "Local expert, networking, community", value: "connector", color: "peach" },
-      { label: "Working smarter with AI", description: "Prompts, tools, automation — making tech work for you", value: "ai", color: "lavender" },
+      { label: "Wanting a guided plan", description: "A clear roadmap and someone to keep me on track", value: "ai", color: "lavender" },
     ],
   },
   {
@@ -46,9 +46,9 @@ const questions: QuizQuestion[] = [
     id: "budget",
     question: "What's your startup budget?",
     options: [
-      { label: "Under €50", description: "Near zero, and that's okay", value: "minimal", color: "mint" },
-      { label: "€50–€200", description: "A small investment", value: "small", color: "lavender" },
-      { label: "€200+", description: "Ready to invest", value: "ready", color: "pink" },
+      { label: "Under $50", description: "Near zero, and that's okay", value: "minimal", color: "mint" },
+      { label: "$50–$200", description: "A small investment", value: "small", color: "lavender" },
+      { label: "$200+", description: "Ready to invest", value: "ready", color: "pink" },
     ],
   },
   {
