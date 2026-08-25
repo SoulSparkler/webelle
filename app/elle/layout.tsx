@@ -7,8 +7,8 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'Elle - WebElle Business Coach',
-  description: 'Your personalized business coach for WebElle kits.',
+  title: 'Elle - Your WebElle Launch Partner',
+  description: 'Your personalized launch partner for WebElle kits.',
   robots: 'noindex, nofollow', // Keep search engines from indexing this
 }
 

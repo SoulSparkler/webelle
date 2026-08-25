@@ -145,7 +145,7 @@ export async function POST(request: NextRequest) {
         Authorization: `Bearer ${apiKey}`,
         "Content-Type": "application/json",
         "HTTP-Referer": referer,
-        "X-Title": "Elle - WebElle Business Coach",
+        "X-Title": "Elle - Your WebElle Launch Partner",
       },
       body: JSON.stringify({
         model: MODEL,
