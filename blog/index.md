@@ -9,6 +9,57 @@ Discover your perfect business path with our comprehensive guides and resources.
 
 ## Latest Posts
 
+### [How to Start a Business at 40 with No Experience (Step-by-Step, No Degree Needed)](/blog/start-business-at-40-no-experience)
+**The #1 high-intent question answered in one roadmap — the validation ("is it too late?") and the practical how-to in one page.**
+
+Built for the woman starting with zero experience:
+- Pick a business that matches your strengths, not your fantasy
+- The honest money picture (you can start for under $100)
+- A complete first-four-weeks checklist
+- The real mental blocker — and how to get past it
+
+---
+
+### [Inspiring Stories: Women Who Started a Business at 45, 50, and 60](/blog/women-started-business-at-45)
+**Real women launched thriving businesses in mid-life — and here's what it actually cost and taught them.**
+
+Validation reads for the "is it too late?" anxiety:
+- Maria (care business at 46), Terri (home yoga at 51), Jean (VA at 58)
+- Why your age is your superpower
+- The 5 habits all of them shared
+
+---
+
+### [12 Low-Investment Business Ideas for Women Over 50](/blog/low-investment-business-ideas-women-50)
+**Affordable, realistic business paths that start for under $200 — with honest pros and cons.**
+
+The fear/pain-point traffic magnet:
+- Ideas ordered by how fast they produce income
+- The real math behind "low investment"
+- What you should never do
+
+---
+
+### [Business Grants & Loans for Women Over 40: Your Money Options, Explained](/blog/grants-and-business-women-over-40)
+**No-hype funding options — grants, microloans, and CDFIs — and when you don't need money at all.**
+
+Financial-confidence building:
+- Real grant and microloan paths that fit
+- A realistic funding checklist
+- What to treat with caution
+
+---
+
+### [Part-Time Business Ideas That Work While You Keep Your Day Job](/blog/part-time-business-small-business-ideas-keeping-day-job)
+**5 realistic after-hours business models, an hour math that won't burn you out, and when to go all-in.**
+
+The low-risk door-in:
+- Ideas that genuinely fit a 6–10 hour week
+- A sustainable after-work schedule
+- The honest signal to go full-time
+
+---
+
 ### [AI for Female Content Creators: Grow Your Brand 10x Faster in 2026](/blog/ai-female-content-creators-2026)
 **Use AI to build your content machine on Instagram, TikTok, YouTube, Pinterest and email — and grow 10x faster without burning out.**
 

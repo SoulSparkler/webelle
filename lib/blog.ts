@@ -25,6 +25,477 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "start-business-at-40-no-experience",
+    title: "How to Start a Business at 40 with No Experience (Step-by-Step, No Degree Needed)",
+    description:
+      "Starting a business at 40 with zero experience is absolutely possible — and often an advantage. Here is the real roadmap: first steps, costs, and what to build this month.",
+    excerpt:
+      "You don't need experience, a degree, or a big budget to start a business at 40. Here's exactly what to do in week one, what it really costs, and how to get your first paying customer fast.",
+    category: "Start Business at 40",
+    publishedAt: "August 28, 2026",
+    readingTime: "12 min read",
+    featured: true,
+    primaryCta: {
+      href: "/quiz",
+      label: "Find Your Starting Point in 2 Minutes",
+    },
+    secondaryCta: {
+      href: "/kits",
+      label: "Browse the Starter Kits",
+    },
+    relatedSlugs: [
+      "women-started-business-at-45",
+      "low-investment-business-ideas-women-50",
+      "grants-and-business-women-over-40",
+      "part-time-business-small-business-ideas-keeping-day-job",
+    ],
+    content: `## The honest truth about starting at 40
+
+If you typed "how to start a business at 40 with no experience" into this page, you have already answered the hardest question: you are ready to try.
+
+The single most common myth is that you need experience, a business degree, or a pile of savings before you can begin. None of that is true. What starting a business at 40 actually requires is a proven model, a simple plan, and a realistic first month — and none of those need experience to follow.
+
+And you are not late. Your 40s come with something most 22-year-old founders do not have: decades of life experience, a professional network, and the self-knowledge to set honest boundaries. Those are genuine competitive advantages.
+
+Here is the exact roadmap for someone starting with zero experience.
+
+## First: pick a business that matches your strengths (not your fantasy)
+
+A lot of "business ideas" ignore the most important variable: whether you will actually enjoy doing it for years. Start there, not with "what makes the most money."
+
+Ask yourself three questions:
+
+- What do people already ask me to help with? (that is usually your market)
+- What work could I tolerate on a bad day? (enthusiasm is a renewable resource; tolerance is not)
+- What can start with zero or little money? (this removes most of the fear)
+
+### Proven, low-cost models for beginners
+
+| Business | Startup cost | Why it fits a 40+ starter |
+|----------|-------------|---------------------------|
+| Virtual assistant | Low | Skills you already have transfer; zero inventory |
+| Pet care / dog walking | Low | Local, repeat clients, fast to start |
+| Vintage or second-hand selling | Low-medium | No degree, learn by doing, no lease |
+| Real-estate personal brand | Low | Build on your own network and referrals |
+| Freelance writing or bookkeeping | Low | Existing office skills convert directly |
+
+If you want your best-fit answer in two minutes instead of reading a long table, [take the business match quiz](/quiz) — it maps you to a model that matches your skills and situation.
+
+## What starting a business at 40 really costs
+
+Here is the honest money picture for a lean launch:
+
+- Core setup (email, website, essentials): **under $100**
+- Optional first tools: $47–$200 depending on the model
+- Professional help (accountant at tax time, logo if you want one): variable, not mandatory
+
+The least experienced mistake is buying before you have a customer. Start with the free and low-cost tools, and upgrade only after the first revenue shows up.
+
+## Your first four weeks, in checklist form
+
+A full plan is useless if nothing gets done this week. Here is a good first-30-days to work through.
+
+### Week 1 — Decide and write it down
+
+- Pick one business from the list (not three)
+- Set one measurable goal: *get one paying client or one sale in 30 days*
+- Tell your plan to one trusted person out loud
+- Write a checklist of the first business's kit
+
+### Week 2 — Set up the essentials
+
+- A clean email address
+- A simple one-page presence (no custom design needed)
+- A pricing page, a service or product description
+- Look up the appropriate template and tools for your model
+
+### Week 3 — First outreach
+
+- Reach out to your existing network first — start where trust already lives
+- Offer one specific, small deliverable you can do well
+- Follow up once on every warm lead
+- Ask every person you talk to, "who else should I be talking to?"
+
+### Week 4 — First revenue and reflect
+
+- Close your first small deal, get a review, or make a first sale
+- Note what worked and what to drop
+- Decide: continue, adjust, or change model
+
+This is what we breathe into every WebElle starter kit: action before the ladder, structure before scale.
+
+## The single biggest mental blocker — and how to get past it
+
+The pain of starting at 40 is usually not the work. It is the inner narrative that you are somehow late.
+
+Replace that story with a question: *what is one small thing I can do this afternoon?* Start with the single smallest concrete step. The right "I can do that" feeling beats the overwhelm every time.
+
+You can take the quiz or open a starter kit and start the first 45 minutes literally today. The next step counts far more than how old you were when you started.
+
+## Your first step right now
+
+- If your plan is a clear business: [pick a starter kit](/kits) and start Week 1 today.
+- If you are still choosing: [take the 2-minute quiz](/quiz) and let the score point you at a match.
+- Decide nothing expensive, commit to one small step, and let the checklist carry you.
+
+---
+
+*You do not need experience to start. You need a plan, a small step, and a refusal to wait for the "perfect moment."*`,
+  },
+  {
+    slug: "women-started-business-at-45",
+    title: "Inspiring Stories: Women Who Started a Business at 45, 50, and 60 (And What It Taught Them)",
+    description: "Real women launched thriving businesses at 45, 50, and 60 — with no prior experience. Read how they started, what it cost, and the honest lessons they learned.",
+    excerpt: "Dreams you have at 45. See how real women found courage to start businesses at 45, 50, and 60 — no experience required — and what they wish they'd known on day one.",
+    category: "Women Business Stories",
+    publishedAt: "August 28, 2026",
+    readingTime: "9 min read",
+    primaryCta: {
+      href: "/quiz",
+      label: "Find Your Match in 2 Minutes",
+    },
+    secondaryCta: {
+      href: "/blog/start-business-at-40-no-experience",
+      label: "Read the Full Roadmap",
+    },
+    relatedSlugs: [
+      "start-business-at-40-no-experience",
+      "part-time-business-small-business-ideas-keeping-day-job",
+    ],
+    content: `## The truth nobody tells you
+
+If you believe starting a business is a "young person's game" and you're 45 going on 50 and feeling late — this page is for you.
+
+The uncomfortable truth is that age is rarely what actually stops people. The real barrier is the internalized belief that the moment has passed. The stories below show the opposite: most of the women we profile started their strongest business in mid-life and beyond, using exactly what their years had given them.
+
+## Why your age is actually your superpower
+
+Before the stories, name the things that age gives you that a 22-year-old founder does not:
+
+- You already know how to communicate with people
+- You have a professional network built over a real career
+- You can see risk clearly and say no to the expensive mistakes
+- You are quieter and more consistent — two of the most underrated business traits
+
+Every one of these is a genuine business asset. The women below converted exactly that into income.
+
+## Maria, started a care business at 46
+
+Maria spent 20 years in administration. She had never run anything. At 46 she started one-to-one care visits for seniors near her town.
+
+- **What she spent:** roughly $600 on insurance, a one-page site, and printing.
+- **When it got real:** client number three referred her to a family who needed four visits a week.
+- **What she says about it:** "I had no clients the first month. In the second I got three. I almost quit before the third."
+
+## Terri, started a home yoga studio at 51
+
+Terri trained as a yoga teacher part-time over three years while she kept working. At 51, with no business experience, she filled a living room with 12 students before renting her own space.
+
+- "I didn't sign a lease until I had twelve people showing up twice a week."
+- **Starting cost:** close to $1,500 total, most of it covering her own time away from work.
+- **Lesson:** "Start smaller than your dreams so failure is cheap and the learning is gentle."
+
+## Jean, became a virtual assistant at 58
+
+Jean never imagined a business for herself. After redundancy at 58, she emailed six local solo professionals offering to take over their calendars and inboxes at a fixed monthly price.
+
+- **Cost to start:** $0. She already owned a laptop.
+- **When it got real:** three of the six said yes within the first month.
+- **Lesson:** "I probably needed nothing except someone to ask."
+
+## What all of them did differently
+
+Different models, different skills — but the same unglamorous approach:
+
+1. Started without debt or a big spend
+2. Used a skill they already had, not a brand new one
+3. Treated the first 90 days as learning, not as a verdict
+4. Ignored the fantasy of a perfect plan and started talking to real people
+5. Sold to people they already knew or were referred to before ever buying ads
+
+## The lessons, in plain words
+
+- Your first plan will be mostly wrong. That is normal and fine.
+- Expect a slow first month. Do not turn a quiet start into a self-defeating judgment.
+- Start where you already have authority: with the people you already know.
+- You will never feel fully ready. Start anyway — the courage comes from acting.
+
+## Your story could be next
+
+WebElle exists to give a woman starting at any age the exact templates, checklists, and first-month plans these women built by trial and error — so you spend your time starting instead of reinventing everything.
+
+- If you want a simple roadmap matched to you: [take the 2-minute quiz](/quiz) to find the business that fits.
+- Or start from zero with the [full structured guide](/blog/start-business-at-40-no-experience).`
+,
+  },
+  {
+    slug: "low-investment-business-ideas-women-50",
+    title: "12 Low-Investment Business Ideas for Women Over 50 (Start for Under $200)",
+    description:
+      "Affordable business ideas for women 50+ that start for under $200. Skills required, expected returns, and the honest pros and cons of each path.",
+    excerpt: "Turning your skills into income at 50+ doesn't need capital. Here are 12 affordable businesses you can start for under $200, with real pros and cons.",
+    category: "Business Ideas",
+    publishedAt: "August 28, 2026",
+    readingTime: "10 min read",
+    primaryCta: {
+      href: "/quiz",
+      label: "Find a Match in 2 Minutes",
+    },
+    secondaryCta: {
+      href: "/blog/start-business-at-40-no-experience",
+      label: "Read the Start-at-40 Roadmap",
+    },
+    relatedSlugs: [
+      "start-business-at-40-no-experience",
+      "women-started-business-at-45",
+      "part-time-business-small-business-ideas-keeping-day-job",
+    ],
+    content: `## Starting at 50 does not ask for deep pockets
+
+The word "investment" is what scares most women 50+ away from starting a business — the fear that you need thousands to begin. In practice, the best models can start for less than a week's groceries.
+
+Below are 12 genuinely affordable business ideas, each ready to start under $200, honestly ordered by how quickly they tend to produce income.
+
+## The affordable ideas at a glance
+
+### 1. Virtual assistant
+- **Cost to start:** $0–50
+- **What it gives you:** you convert your existing office and computer skills into hourly client work.
+- **Honest take:** you are selling skills you already have; you need boundaries more than a degree.
+
+### 2. Dog walking and pet care
+- **Cost:** $20–100
+- **What it gives you:** regular, predictable, repeatable local income.
+- **Honest take:** weather-dependent and rewards consistency.
+
+### 3. Vintage and second-hand selling
+- **Cost:** $100–200
+- **What it gives you:** you buy low, photograph, and resell on your eye for value.
+- **Honest take:** inventory rounds and patience; sales come in waves.
+
+### 4. Real-estate personal brand and referral partner
+- **Cost:** mostly your time
+- **What it gives you:** a reputation that compounds through trust and referrals.
+- **Honest take:** depends on your market and networking; not a quick win.
+
+### 5. Compassionate care and companion visits
+- **Cost:** under $50
+- **What it gives you:** genuine human need and deep, non-monetary reward.
+- **Honest take:** emotionally demanding and lower volume.
+
+### 6. Homemade baked or craft products
+- **Cost:** under $100
+- **What it gives you:** you already have the skill; neighbours buy what they can taste.
+- **Honest take:** food-safety and local-market rules come with scale.
+
+### 7. Group classes (yoga, sewing, craft, languages)
+- **Cost:** low (a shared space or your own home)
+- **What it gives you:** modest, repeatable regular income.
+- **Honest take:** depends on your area and consistency.
+
+### 8. Small-scale bookkeeping
+- **Cost:** under $200
+- **What it gives you:** repeatable monthly value small businesses pay for gladly.
+- **Honest take:** a little training or certification helps and is affordable at this scale.
+
+### 9. Inbox and schedule management for local businesses
+- **Cost:** $0–50
+- **What it gives you:** the same as a VA but more local and easier to get referrals.
+- **Honest take:** the marketing is the whole "how" — you must pitch owners directly.
+
+### 10. Officiant, celebrant, or mediator
+- **Cost:** under $200 for the certification
+- **What it gives you:** occasional, high-value, life-event income.
+- **Honest take:** irregular schedule and subject to local rules.
+
+### 11. Local tutoring
+- **Cost:** under $50
+- **What it gives you:** direct impact and flexible hours.
+- **Honest take:** you need to know a subject you can teach well.
+
+### 12. Coaching from your own life topic
+- **Cost:** under $100
+- **What it gives you:** you name the topic and the price.
+- **Honest take:** building the trust that keeps fees justified takes time.
+
+## The real math behind low investment
+
+After the purchase price, the real ingredient is your time and your consistency. The $200 never makes a business thrive on its own — the effort does. These models win because they keep the cost of starting low and the value of steady effort high.
+
+- **Fastest to first income:** dog walking, pet care, virtual assistant.
+- **Slowest but longest-lasting:** real-estate brand, coaching, honesty-led selling.
+- **Highest return with no experience:** there is not one — every path here needs your time or a skill you already own.
+
+Not sure which fits you? [Take the 2-minute quiz](/quiz) and let the score point you to a single match. The kit that matches comes with a first-30-day plan built in.
+
+## What you should never do
+
+- Buying a big stack of tools before your first deal — nobody needs a full office on day one.
+- Picking an idea because it is "trending" without checking it fits your lifestyle.
+- Comparing day 40 of your business to someone else's three-year highlight reel.
+
+---
+
+*A business you start at 55 is not fragile and new. It is a skill set you have spent decades building, and it only needs a small, well-built start.*`
+,
+  },
+  {
+    slug: "grants-and-business-women-over-40",
+    title: "Business Grants & Loans for Women Over 40 in 2026: Your Money Options, Explained",
+    description: "Funding options (grants, loans, microloans, communities) for women 40+ starting a business. No hype: what qualifies, how to apply realistically, and whether you even need it.",
+    excerpt: "Don't feel lost in funding searches. We explain real grants, loans, and microloan options for women 40+, what they actually require, and the cheaper order to attack it.",
+    category: "Funding & Grants",
+    publishedAt: "August 28, 2026",
+    readingTime: "9 min read",
+    primaryCta: {
+      href: "/quiz",
+      label: "Match Your Business in 2 Minutes",
+    },
+    secondaryCta: {
+      href: "/blog/start-business-at-40-no-experience",
+      label: "Read the Start-at-40 Roadmap",
+    },
+    relatedSlugs: [
+      "start-business-at-40-no-experience",
+      "low-investment-business-ideas-women-50",
+    ],
+    content: `## First: most of what you need is not "funding"
+
+Let's be honest at the outset: many of the best businesses a woman 40+ can start cost less than a month of groceries. So before you hunt for grants and loans, ask whether you need capital at all.
+
+That changes everything. If your launch is genuinely low-cost, the best financing is a lean plan and a steady month of action — not a repayment you will still be carrying years later.
+
+Once startup capital truly is the next step — because you need equipment, a license, or a little runway to your first customers — here are the real paths, in the order worth approaching them.
+
+## Real funding paths that fit you
+
+### Grants that deserve your attention
+- **Local and regional small-business grants:** offered through your city economic-development office or regional small-business councils. They reward local hiring and are often explicitly open to women and older-founders. These are your most realistic targets.
+- **Women-focused and community funds:** local chambers, women's business centres, and community organisations run grants aimed squarely at the 40+ first-time founder.
+- **Community micro-grant programs:** $500–$5,000 via community lenders or business associations. Small amount, far easier to qualify for than a national award.
+
+**A practical tip:** search for "[your country] small business grant for women over 50" and search your city or region first — local fit matters far more than national listings.
+
+### Microloans — the sweet spot for building capital
+The single most useful tool for building up from near zero:
+- **SBA Microloan (US):** usually under $50,000, reached through local intermediaries; great for starting equipment and initial stock.
+- **Community Development Financial Institutions (CDFIs):** mission-driven lenders that welcome first-time and under-served borrowers. For a woman 40+ starting small, CDFIs are the most underused option of all.
+- **Local and regional business micro-loan programs:** modest amounts, easier terms, and tied to local job creation.
+
+### Conventional small business loans
+Keep these until later. Loans generally ask for revenue history, personal guarantees, and collateral — the least suitable thing when your business has never traded. They are a later rung, not the first one.
+
+### What to treat with caution
+- **"Start now" lenders** promising instant cash — the hidden interest compounds fast.
+- **Any grant or loan that charges an up-front "application fee".** Legitimate grants do not charge you to apply.
+
+## A realistic funding checklist
+
+1. Do not borrow more than you need to reach your first month. That is the number.
+2. Prefer local grants and microloans before conventional loans.
+3. For anything under $10k, prefer a microloan or CDFI over a credit card or personal loan.
+4. A real grant application takes patience and paperwork — treat it as one part of the month, not the whole plan.
+
+## The truth if you need zero money
+
+Every WebElle starter kit is designed so most women can begin with little or no money up front — before the money question even comes up. A lean start and a consistent first month beat a romantic grant windfall almost every time.
+
+- **Final word:** grants and loans do not decide for you. A lean plan and a month of consistent action do.
+
+---
+
+*If you are awake at night hunting for grants, check the real need first. You may only need $0, and catching your first customer will do you more good than a $50,000 loan.*`
+,
+  },
+  {
+    slug: "part-time-business-small-business-ideas-keeping-day-job",
+    title: "Part-Time Business Ideas That Work While You Keep Your Day Job (Realistic Guide)",
+    description: "You can build a business part-time without quitting your job. Here are realistic after-hours business models, how many hours to invest, and a schedule that won't burn you out.",
+    category: "Part-Time Business",
+    publishedAt: "August 28, 2026",
+    readingTime: "9 min read",
+    primaryCta: {
+      href: "/quiz",
+      label: "Match a Part-Time Fit in 2 Minutes",
+    },
+    secondaryCta: {
+      href: "/kits",
+      label: "See the Starter Kits",
+    },
+    relatedSlugs: [
+      "start-business-at-40-no-experience",
+      "low-investment-business-ideas-women-50",
+    ],
+    content: `## You do not have to quit to start
+
+The encouraging news: most successful businesses — including many of the best ones — began part-time while the founder kept a day job. Your day job is not the enemy; it is the runway that removes the desperate need to make the business pay immediately.
+
+This guide is for the path where income and stability get to coexist: you build on evenings and weekends, on purpose, without burning out.
+
+## What the hours actually allow
+
+- A "keep-the-job" plan means building about **6–10 focused hours a week** — real, but sustainable.
+- At roughly 8 focused hours each week, a lean business reaches the point where it starts to pay for itself within a few months.
+- The math that does not work is any idea that needs 30 hours a week to produce its first dollar. Those have to wait until you go full-time.
+
+## The part-time ideas that genuinely work
+
+### 1. Virtual assistant for one or two clients
+- **Why it works:** you choose the hours you sell; a VA is simple time-for-money work.
+- **Weekly hours to start:** 5–10
+- **Best fit:** you enjoy admin, systems, and a calm calendar.
+
+### 2. Pet sitting and dog walking at the edges of the day
+- **Why it works:** early-morning and evening slots fit around office hours, no store or lease.
+- **Hours:** lunch breaks and weekends are enough to begin.
+- **Best fit:** you like animals and live near homes with dogs.
+
+### 3. Vintage and second-hand selling as an evening hobby
+- **Why it works:** you source in small blocks and photograph when you can.
+- **Hours:** 4–6 weekend hours plus one photo evening.
+- **Best fit:** an eye for value and patience with waves of sales.
+
+### 4. Freelance writing, editing, or bookkeeping
+- **Why it works:** uses a skill you already rely on every day; no brand-new subject.
+- **Hours:** 4–8 evening hours.
+- **Best fit:** you are good at a skill others want — words, numbers, spreadsheets.
+
+### 5. Local services (decluttering, gardening, small craft, small repair)
+- **Why it works:** weekend gigs, no inventory, steady word-of-mouth.
+- **Hours:** a weekend-only slot is a real, workable plan.
+- **Best fit:** happy neighbours pass on your name.
+
+## A sustainable after-work schedule
+
+- **Tuesday evening (60 minutes):** deep work — client outreach or content.
+- **Thursday evening (60 minutes):** admin and follow-ups.
+- **Saturday morning (90 minutes):** the big "make it happen" block.
+- **Sunday (optional):** set the plan for the week.
+
+Only commit to what you can truly protect. One honoured hour a week beats an elaborate plan you abandon the first time energy dips or life gets busy.
+
+## The psychology of a part-time starter
+
+- **A quiet first month is data, not doom.** Two thin weeks does not mean the business will not work.
+- **Keep the job and never feel embarrassed by it.** It is paying your bills while you build the future — that is an asset, not a failure.
+- **Do not compare your evenings to someone's full-time highlight reel.** Same race, a different clock.
+
+## When it genuinely is time to go full-time
+
+Let a real signal prompt the leap, not a mood:
+
+1. Revenue covers your living costs plus a few months of cushion.
+2. A client asks for more than your side-hours can deliver — a true demand signal.
+3. You have a specific opportunity that demands your full focus.
+
+Until that moment, build while you earn. It is the most peaceful, realistic roadmap in business, and it genuinely works for a woman starting at 40+.
+
+---
+
+*The start of a part-time business is simple: one protected evening and one small, consistent step. It's the fantasy of a perfect "now" that keeps real beginnings from ever happening.*`
+,
+  },
+  {
     slug: "how-much-does-it-cost-to-start-a-virtual-assistant-business",
     title: "How Much Does It Cost to Start a Virtual Assistant Business in 2026? (Complete Breakdown)",
     description:
