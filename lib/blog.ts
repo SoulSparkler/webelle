@@ -48,6 +48,7 @@ export const blogPosts: BlogPost[] = [
       "low-investment-business-ideas-women-50",
       "grants-and-business-women-over-40",
       "part-time-business-small-business-ideas-keeping-day-job",
+      "side-hustle-at-60",
     ],
     content: `## The honest truth about starting at 40
 
@@ -161,6 +162,7 @@ You can take the quiz or open a starter kit and start the first 45 minutes liter
     relatedSlugs: [
       "start-business-at-40-no-experience",
       "part-time-business-small-business-ideas-keeping-day-job",
+      "side-hustle-at-60",
     ],
     content: `## The truth nobody tells you
 
@@ -493,6 +495,92 @@ Until that moment, build while you earn. It is the most peaceful, realistic road
 ---
 
 *The start of a part-time business is simple: one protected evening and one small, consistent step. It's the fantasy of a perfect "now" that keeps real beginnings from ever happening.*`
+,
+  },
+  {
+    slug: "side-hustle-at-60",
+    title: "How to Start a Side Hustle at 60: A Realistic, Income-Earning Guide",
+    description: "Starting a side hustle at 60 is practical, not fanciful. Here is the honest time-and-money math, the models that fit your energy and experience, and a first-30-days plan.",
+    excerpt: "Retired or semi-retired and want modest, meaningful income? Here is what a side hustle at 60 really looks like — the ideas that genuinely fit, the hour math, and a gentle way to start.",
+    category: "Side Hustles",
+    publishedAt: "September 17, 2026",
+    readingTime: "9 min read",
+    primaryCta: {
+      href: "/quiz",
+      label: "Find Your Fit in 2 Minutes",
+    },
+    secondaryCta: {
+      href: "/blog/start-business-at-40-no-experience",
+      label: "Read the Start-at-40 Roadmap",
+    },
+    relatedSlugs: [
+      "start-business-at-40-no-experience",
+      "women-started-business-at-45",
+      "low-investment-business-ideas-women-50",
+    ],
+    content: `## Sixty is not a fencing — it is a launchpad
+
+A side hustle at 60 does not mean chasing a second career; it means choosing meaningful, manageable income on your terms. You bring what a thirty-year-old cannot: decades of judgment, a network that already trusts you, and the freedom to say no to bad ideas.
+
+The honest version: it will not replace a pension, and it should not try. What it can do is keep you engaged, fund the nice-to-haves, and quietly prove that you are far from finished.
+
+## The honest time-and-money math
+
+- A realistic side hustle at 60 runs **5–10 focused hours a week**, not 30. That is the point — it fits around the life you actually want.
+- Expect **$200–800 a month** once a model is chosen and worked steadily — modest, real, and yours.
+- The idea to avoid is any one that needs 25+ hours a week to see a first dollar. That is a job, not a side hustle.
+
+## The models that genuinely fit at 60
+
+### 1. Teach and mentor what you already know
+- Sessions in a subject you have lived — sewing, languages, bookkeeping, a profession you retired from.
+- **Time:** 3–6 hrs/wk · **Start cost:** under $50 (a room in your home or a community room)
+- **Why it works:** your credibility is earned, so the hardest part — earning trust — is already done.
+
+### 2. Help small businesses with their admin
+- Local shops and solo professionals need someone reliable for schedules, invoices, and emails.
+- **Time:** 5–8 hrs/wk · **Start cost:** $0 (your existing computer)
+- **Why it works:** you are selling a skill you have used for decades, not learning a brand-new one.
+
+### 3. Vintage and second-hand selling
+- Source at local markets and sales, photograph, and list online.
+- **Time:** 4–6 hrs/wk · **Start cost:** $100–200
+- **Why it works:** you control the pace; sales come in waves, and the hunt is half the joy.
+
+### 4. Companion and pet care
+- Walks, sitting, and companionship for neighbours and their animals.
+- **Time:** your morning and evening hours · **Start cost:** under $50
+- **Why it works:** local, flexible, and quietly rewarding — the gentle side of care work.
+
+### 5. Small-scale bookkeeping or organizing
+- Monthly books for 3–5 tiny businesses or paid decluttering help.
+- **Time:** 4–8 hrs/wk · **Start cost:** under $200 with a little training
+- **Why it works:** repeatable monthly value small firms gladly pay for.
+
+These are the models our [business starter kits](/kits) were built around — every kit is a first-30-days plan, not a course.
+
+## Protect your schedule — that is the real gift
+
+Retirement is not the enemy of a side hustle; it is the reason a side hustle can stay a side hustle. Guard your mornings if you love them, and never accept a client who demands your whole week. A hustle that steals your life is a job with worse branding.
+
+## Your first 30 days (small, not shiny)
+
+1. **Week 1:** choose one model — take the [2-minute quiz](/quiz) if you are undecided — and tell three people.
+2. **Week 2:** put your weekly hours in writing; start the cost sheet or your first listing.
+3. **Week 3:** do one real piece of outreach or publish your first offer.
+4. **Week 4:** count what happened, keep what worked, drop what tired you.
+
+## What to skip
+
+- Big course or equipment purchases before the first dollar.
+- Models that demand 25+ hours a week "to be worth it".
+- Comparing your gentle pace to someone else's highlight reel.
+
+You are not starting late. You are starting equipped. The women who went before you — [started at 45, 50, and 60](/blog/women-started-business-at-45) — prove the pattern. And if you want the step-by-step from zero experience, the [Start-at-40 roadmap](/blog/start-business-at-40-no-experience) works just as well at 60.
+
+---
+
+*At 60 you are not behind; you are stacked. A side hustle is not a late start — it is an experienced one.*`
 ,
   },
   {
